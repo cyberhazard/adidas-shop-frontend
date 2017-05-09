@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({sale, price, img}) => {
   return (
@@ -6,7 +7,7 @@ const ProductCard = ({sale, price, img}) => {
       <div className="product-card">
         { sale && <span className="product-card__sale">Sale</span> }
         <img className="product-card__photo" src={img} alt="" />
-        <a className={`product-card__link ${sale? '' : 'product-card__link_sale' }`} href="#">{price}</a>
+        <Link to="/Details" className={`product-card__link ${sale? '' : 'product-card__link_sale' }`}>{price}</Link>
       </div>
     </div>
   )

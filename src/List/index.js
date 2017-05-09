@@ -1,9 +1,9 @@
 import React from 'react';
 import Filter from './Filter';
-import Card from './Products/Card';
-import prod1Img from './Products/Card/prod-1.png';
-import prod2Img from './Products/Card/prod-2.png';
-import prod3Img from './Products/Card/prod-3.png';
+import Card from './Card';
+import prod1Img from './Card/prod-1.png';
+import prod2Img from './Card/prod-2.png';
+import prod3Img from './Card/prod-3.png';
 
 const generateId = () => Date.now()+'-'+Math.round(Math.random()*10000000);
 const generateNumber = (min,max) => Math.floor(Math.random()*(max-min+1)+min);

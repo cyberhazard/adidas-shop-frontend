@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from './logo.png';
 
 const Logo = () => {
   return (
-    <a href="/">
+    <Link to="/">
       <img className="sidebar__logo" src={logo} alt="" />
-    </a>
+    </Link>
   )
 }
 
