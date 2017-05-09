@@ -1,0 +1,979 @@
+@font-face {
+  font-family: 'Andale Mono';
+  src: url(/fonts/andale-mono.ttf);
+  font-style: normal;
+  font-weight: 400
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url(/fonts/avenir-next-bold.ttf);
+  font-style: normal;
+  font-weight: 700
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url(/fonts/avenir-next-regular.ttf);
+  font-style: normal;
+  font-weight: 500
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  outline: 0
+}
+
+#wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
+body {
+  overflow: hidden
+}
+
+.sidebar {
+  background-color: #0f0f0f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  min-width: 250px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+  width: 414px;
+  overflow: auto
+}
+
+.sidebar__logo {
+  margin: 50px 0 40px
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  padding: 0 22px
+}
+
+.search__input {
+  width: 100%;
+  height: 100%;
+  font-family: "Andale Mono";
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid #242424;
+  color: #fff;
+  font-size: 28px;
+  padding-left: 60px
+}
+
+.search__image {
+  position: absolute;
+  bottom: 12px;
+  left: 36px
+}
+
+.menu {
+  text-align: center;
+  text-transform: uppercase
+}
+
+.menu__submenu {
+  margin: 32px 0 56px
+}
+
+.menu__item {
+  font-family: "Avenir Next";
+  font-size: 24px;
+  font-weight: 700;
+  margin: 30px 0;
+  color: #3c3c3c;
+  cursor: pointer;
+  position: relative;
+  transition: .3s
+}
+
+.menu__item:hover {
+  color: #fff
+}
+
+.menu__item_selected {
+  color: #fff
+}
+
+.menu__item_selected span {
+  position: relative
+}
+
+.menu__item_selected span:after {
+  content: '\f078';
+  position: absolute;
+  top: 8px;
+  right: -18px;
+  font-family: FontAwesome;
+  font-size: 12px
+}
+
+.menu__subitem {
+  margin: 24px 0
+}
+
+.menu__link {
+  font-family: "Andale Mono";
+  font-size: 24px;
+  font-weight: 400;
+  color: #3c3c3c;
+  transition: .3s
+}
+
+.menu__link:hover {
+  color: #fff
+}
+
+.menu__link_active {
+  color: #fff
+}
+
+.content {
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  height: 100vh;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+
+.filter {
+  padding: 0 12px;
+  margin: 24px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+
+.filter__image {
+  margin-right: 30px
+}
+
+.filter__text {
+  font-family: "Avenir Next";
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #d6d6d6;
+  border: none;
+  background-color: transparent;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: .3s
+}
+
+.filter__text:hover {
+  color: #4d42f8
+}
+
+.filter__text_selected {
+  color: #4d42f8
+}
+
+.filter__title {
+  margin: 0 12px 0 72px
+}
+
+.product-card {
+  border: 8px solid #f3f3f3;
+  position: relative;
+  text-align: center
+}
+
+.product-card__sale {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  padding: 6px 20px;
+  color: #fff;
+  font-family: "Avenir Next";
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #ff5c5c
+}
+
+.product-card__photo {
+  max-height: 192px
+}
+
+.product-card__link {
+  display: block;
+  text-align: center;
+  padding: 26px 0;
+  width: 100%;
+  border-top: 12px solid #f3f3f3;
+  color: #fff;
+  background-image: linear-gradient(135deg, #0c09bf 0, #966dd8 100%);
+  font-family: "Avenir Next";
+  font-size: 30px;
+  font-weight: 700
+}
+
+.product-card__link_sale {
+  background-image: none;
+  color: #000
+}
+
+.order {
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  overflow: auto;
+  padding: 0 28px
+}
+
+.order__top-left {
+  position: absolute;
+  top: 12px;
+  left: 28px;
+  text-align: left
+}
+
+.order__top-right {
+  position: absolute;
+  top: 36px;
+  right: 38px
+}
+
+.order__details-top {
+  position: relative;
+  text-align: center;
+  padding-top: 30px
+}
+
+.order__title {
+  color: #3a3a3a;
+  width: 400px;
+  font-family: "Avenir Next";
+  font-size: 64px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left
+}
+
+.order__save {
+  width: 75px;
+  height: 75px;
+  border: none;
+  border-radius: 50%;
+  background-color: #e4e4e4;
+  color: #fff;
+  font-family: "Avenir Next";
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer
+}
+
+.order__button {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  color: #fff;
+  padding: 36px 0;
+  cursor: pointer;
+  font-family: "Avenir Next";
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #4949aa 0, #27275d 100%);
+  border: none
+}
+
+.order__sale {
+  color: #fff;
+  font-family: "Avenir Next";
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  background-color: #ff5c5c
+}
+
+.order__price {
+  position: absolute;
+  top: calc(100% + 20px);
+  right: 0;
+  color: #e2e2e2;
+  font-family: "Avenir Next";
+  font-size: 80px;
+  font-weight: 700
+}
+
+.order__big-image {
+  max-height: 460px
+}
+
+.order__description {
+  font-family: "Avenir Next";
+  font-size: 33px;
+  font-weight: 500;
+  line-height: 42px;
+  color: #d8d8d8
+}
+
+.order__description_bold {
+  color: #6e6e6e
+}
+
+.previews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 30px
+}
+
+.previews__item {
+  max-height: 130px;
+  cursor: pointer;
+  border: 4px solid transparent;
+  background-color: transparent
+}
+
+.previews__item_selected {
+  border-color: #e9e9eb
+}
+
+.previews__show-more {
+  height: 130px;
+  width: 160px;
+  text-align: center;
+  line-height: 130px;
+  color: silver;
+  font-family: "Avenir Next";
+  font-size: 14px;
+  font-weight: 400
+}
+
+.colors {
+  position: absolute;
+  top: 7px;
+  right: calc(100% + 30px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
+.colors__item {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  margin: 0 6px;
+  border: none;
+  cursor: pointer
+}
+
+.colors__item_gray {
+  background-color: #c5c5c5
+}
+
+.colors__item_blue {
+  background-color: #4c88cb
+}
+
+.colors__item_black {
+  background-color: #494949
+}
+
+.colors__item_white {
+  background-color: #e1e1e1
+}
+
+@media (max-width:1435px) {
+  .sidebar {
+    width: 200px
+  }
+  .previews {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+}
+
+@media (max-width:970px) {
+  #wrapper {
+    padding-top: 64px
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    overflow: hidden;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 12px
+  }
+  .sidebar__logo {
+    height: 30px
+  }
+  .menu,
+  .search {
+    display: none
+  }
+  .content {
+    padding-top: 15px;
+    height: calc(100vh - 64px)
+  }
+  .filter {
+    display: block;
+    margin: 0
+  }
+  .filter__title {
+    margin: 0 4px
+  }
+  .filter__image {
+    display: none
+  }
+  .order__big-image {
+    width: 100%;
+    max-height: none
+  }
+  .order__top-left {
+    position: static
+  }
+  .order__top-right {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+  }
+  .order__save {
+    display: none
+  }
+  .order__title {
+    font-size: 36px;
+    width: 100%
+  }
+  .order .colors,
+  .order__price,
+  .order__sale {
+    position: static
+  }
+  .order__price {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1
+  }
+  .order__sale-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+  .order__description {
+    font-size: 20px;
+    line-height: 1.2
+  }
+  .order__button {
+    padding: 23px
+  }
+  .previews {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+  }
+  .previews__show-more {
+    width: 62px;
+    line-height: normal
+  }
+  .previews__item img,
+  .previews__show-more {
+    height: 50px
+  }
+}
+
+[class*=col-xs] {
+  padding: 12px
+}
+
+[class*=col-sm] {
+  padding: 12px
+}
+
+[class*=col-md] {
+  padding: 12px
+}
+
+[class*=col-lg] {
+  padding: 12px
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto
+}
+
+.col-lg-1 {
+  -ms-flex-preferred-size: 8.333333333333334%;
+  flex-basis: 8.333333333333334%;
+  max-width: 8.333333333333334%
+}
+
+.col-lg-offset-1 {
+  margin-left: 8.333333333333334%
+}
+
+.col-lg-2 {
+  -ms-flex-preferred-size: 16.666666666666668%;
+  flex-basis: 16.666666666666668%;
+  max-width: 16.666666666666668%
+}
+
+.col-lg-offset-2 {
+  margin-left: 16.666666666666668%
+}
+
+.col-lg-3 {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  max-width: 25%
+}
+
+.col-lg-offset-3 {
+  margin-left: 25%
+}
+
+.col-lg-4 {
+  -ms-flex-preferred-size: 33.333333333333336%;
+  flex-basis: 33.333333333333336%;
+  max-width: 33.333333333333336%
+}
+
+.col-lg-offset-4 {
+  margin-left: 33.333333333333336%
+}
+
+.col-lg-5 {
+  -ms-flex-preferred-size: 41.66666666666667%;
+  flex-basis: 41.66666666666667%;
+  max-width: 41.66666666666667%
+}
+
+.col-lg-offset-5 {
+  margin-left: 41.66666666666667%
+}
+
+.col-lg-6 {
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  max-width: 50%
+}
+
+.col-lg-offset-6 {
+  margin-left: 50%
+}
+
+.col-lg-7 {
+  -ms-flex-preferred-size: 58.333333333333336%;
+  flex-basis: 58.333333333333336%;
+  max-width: 58.333333333333336%
+}
+
+.col-lg-offset-7 {
+  margin-left: 58.333333333333336%
+}
+
+.col-lg-8 {
+  -ms-flex-preferred-size: 66.66666666666667%;
+  flex-basis: 66.66666666666667%;
+  max-width: 66.66666666666667%
+}
+
+.col-lg-offset-8 {
+  margin-left: 66.66666666666667%
+}
+
+.col-lg-9 {
+  -ms-flex-preferred-size: 75%;
+  flex-basis: 75%;
+  max-width: 75%
+}
+
+.col-lg-offset-9 {
+  margin-left: 75%
+}
+
+.col-lg-10 {
+  -ms-flex-preferred-size: 83.33333333333334%;
+  flex-basis: 83.33333333333334%;
+  max-width: 83.33333333333334%
+}
+
+.col-lg-offset-10 {
+  margin-left: 83.33333333333334%
+}
+
+.col-lg-11 {
+  -ms-flex-preferred-size: 91.66666666666667%;
+  flex-basis: 91.66666666666667%;
+  max-width: 91.66666666666667%
+}
+
+.col-lg-offset-11 {
+  margin-left: 91.66666666666667%
+}
+
+.col-lg-12 {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  max-width: 100%
+}
+
+.col-lg-offset-12 {
+  margin-left: 100%
+}
+
+@media (min-width:1266px) and (max-width:1760px) {
+  .col-md-1 {
+    -ms-flex-preferred-size: 8.333333333333334%;
+    flex-basis: 8.333333333333334%;
+    max-width: 8.333333333333334%
+  }
+  .col-md-offset-1 {
+    margin-left: 8.333333333333334%
+  }
+  .col-md-2 {
+    -ms-flex-preferred-size: 16.666666666666668%;
+    flex-basis: 16.666666666666668%;
+    max-width: 16.666666666666668%
+  }
+  .col-md-offset-2 {
+    margin-left: 16.666666666666668%
+  }
+  .col-md-3 {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%
+  }
+  .col-md-offset-3 {
+    margin-left: 25%
+  }
+  .col-md-4 {
+    -ms-flex-preferred-size: 33.333333333333336%;
+    flex-basis: 33.333333333333336%;
+    max-width: 33.333333333333336%
+  }
+  .col-md-offset-4 {
+    margin-left: 33.333333333333336%
+  }
+  .col-md-5 {
+    -ms-flex-preferred-size: 41.66666666666667%;
+    flex-basis: 41.66666666666667%;
+    max-width: 41.66666666666667%
+  }
+  .col-md-offset-5 {
+    margin-left: 41.66666666666667%
+  }
+  .col-md-6 {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%
+  }
+  .col-md-offset-6 {
+    margin-left: 50%
+  }
+  .col-md-7 {
+    -ms-flex-preferred-size: 58.333333333333336%;
+    flex-basis: 58.333333333333336%;
+    max-width: 58.333333333333336%
+  }
+  .col-md-offset-7 {
+    margin-left: 58.333333333333336%
+  }
+  .col-md-8 {
+    -ms-flex-preferred-size: 66.66666666666667%;
+    flex-basis: 66.66666666666667%;
+    max-width: 66.66666666666667%
+  }
+  .col-md-offset-8 {
+    margin-left: 66.66666666666667%
+  }
+  .col-md-9 {
+    -ms-flex-preferred-size: 75%;
+    flex-basis: 75%;
+    max-width: 75%
+  }
+  .col-md-offset-9 {
+    margin-left: 75%
+  }
+  .col-md-10 {
+    -ms-flex-preferred-size: 83.33333333333334%;
+    flex-basis: 83.33333333333334%;
+    max-width: 83.33333333333334%
+  }
+  .col-md-offset-10 {
+    margin-left: 83.33333333333334%
+  }
+  .col-md-11 {
+    -ms-flex-preferred-size: 91.66666666666667%;
+    flex-basis: 91.66666666666667%;
+    max-width: 91.66666666666667%
+  }
+  .col-md-offset-11 {
+    margin-left: 91.66666666666667%
+  }
+  .col-md-12 {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%
+  }
+  .col-md-offset-12 {
+    margin-left: 100%
+  }
+}
+
+@media (min-width:670px) and (max-width:1265px) {
+  .col-sm-1 {
+    -ms-flex-preferred-size: 8.333333333333334%;
+    flex-basis: 8.333333333333334%;
+    max-width: 8.333333333333334%
+  }
+  .col-sm-offset-1 {
+    margin-left: 8.333333333333334%
+  }
+  .col-sm-2 {
+    -ms-flex-preferred-size: 16.666666666666668%;
+    flex-basis: 16.666666666666668%;
+    max-width: 16.666666666666668%
+  }
+  .col-sm-offset-2 {
+    margin-left: 16.666666666666668%
+  }
+  .col-sm-3 {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%
+  }
+  .col-sm-offset-3 {
+    margin-left: 25%
+  }
+  .col-sm-4 {
+    -ms-flex-preferred-size: 33.333333333333336%;
+    flex-basis: 33.333333333333336%;
+    max-width: 33.333333333333336%
+  }
+  .col-sm-offset-4 {
+    margin-left: 33.333333333333336%
+  }
+  .col-sm-5 {
+    -ms-flex-preferred-size: 41.66666666666667%;
+    flex-basis: 41.66666666666667%;
+    max-width: 41.66666666666667%
+  }
+  .col-sm-offset-5 {
+    margin-left: 41.66666666666667%
+  }
+  .col-sm-6 {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%
+  }
+  .col-sm-offset-6 {
+    margin-left: 50%
+  }
+  .col-sm-7 {
+    -ms-flex-preferred-size: 58.333333333333336%;
+    flex-basis: 58.333333333333336%;
+    max-width: 58.333333333333336%
+  }
+  .col-sm-offset-7 {
+    margin-left: 58.333333333333336%
+  }
+  .col-sm-8 {
+    -ms-flex-preferred-size: 66.66666666666667%;
+    flex-basis: 66.66666666666667%;
+    max-width: 66.66666666666667%
+  }
+  .col-sm-offset-8 {
+    margin-left: 66.66666666666667%
+  }
+  .col-sm-9 {
+    -ms-flex-preferred-size: 75%;
+    flex-basis: 75%;
+    max-width: 75%
+  }
+  .col-sm-offset-9 {
+    margin-left: 75%
+  }
+  .col-sm-10 {
+    -ms-flex-preferred-size: 83.33333333333334%;
+    flex-basis: 83.33333333333334%;
+    max-width: 83.33333333333334%
+  }
+  .col-sm-offset-10 {
+    margin-left: 83.33333333333334%
+  }
+  .col-sm-11 {
+    -ms-flex-preferred-size: 91.66666666666667%;
+    flex-basis: 91.66666666666667%;
+    max-width: 91.66666666666667%
+  }
+  .col-sm-offset-11 {
+    margin-left: 91.66666666666667%
+  }
+  .col-sm-12 {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%
+  }
+  .col-sm-offset-12 {
+    margin-left: 100%
+  }
+}
+
+@media (max-width:669px) {
+  .col-xs-1 {
+    -ms-flex-preferred-size: 8.333333333333334%;
+    flex-basis: 8.333333333333334%;
+    max-width: 8.333333333333334%
+  }
+  .col-xs-offset-1 {
+    margin-left: 8.333333333333334%
+  }
+  .col-xs-2 {
+    -ms-flex-preferred-size: 16.666666666666668%;
+    flex-basis: 16.666666666666668%;
+    max-width: 16.666666666666668%
+  }
+  .col-xs-offset-2 {
+    margin-left: 16.666666666666668%
+  }
+  .col-xs-3 {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%
+  }
+  .col-xs-offset-3 {
+    margin-left: 25%
+  }
+  .col-xs-4 {
+    -ms-flex-preferred-size: 33.333333333333336%;
+    flex-basis: 33.333333333333336%;
+    max-width: 33.333333333333336%
+  }
+  .col-xs-offset-4 {
+    margin-left: 33.333333333333336%
+  }
+  .col-xs-5 {
+    -ms-flex-preferred-size: 41.66666666666667%;
+    flex-basis: 41.66666666666667%;
+    max-width: 41.66666666666667%
+  }
+  .col-xs-offset-5 {
+    margin-left: 41.66666666666667%
+  }
+  .col-xs-6 {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%
+  }
+  .col-xs-offset-6 {
+    margin-left: 50%
+  }
+  .col-xs-7 {
+    -ms-flex-preferred-size: 58.333333333333336%;
+    flex-basis: 58.333333333333336%;
+    max-width: 58.333333333333336%
+  }
+  .col-xs-offset-7 {
+    margin-left: 58.333333333333336%
+  }
+  .col-xs-8 {
+    -ms-flex-preferred-size: 66.66666666666667%;
+    flex-basis: 66.66666666666667%;
+    max-width: 66.66666666666667%
+  }
+  .col-xs-offset-8 {
+    margin-left: 66.66666666666667%
+  }
+  .col-xs-9 {
+    -ms-flex-preferred-size: 75%;
+    flex-basis: 75%;
+    max-width: 75%
+  }
+  .col-xs-offset-9 {
+    margin-left: 75%
+  }
+  .col-xs-10 {
+    -ms-flex-preferred-size: 83.33333333333334%;
+    flex-basis: 83.33333333333334%;
+    max-width: 83.33333333333334%
+  }
+  .col-xs-offset-10 {
+    margin-left: 83.33333333333334%
+  }
+  .col-xs-11 {
+    -ms-flex-preferred-size: 91.66666666666667%;
+    flex-basis: 91.66666666666667%;
+    max-width: 91.66666666666667%
+  }
+  .col-xs-offset-11 {
+    margin-left: 91.66666666666667%
+  }
+  .col-xs-12 {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%
+  }
+  .col-xs-offset-12 {
+    margin-left: 100%
+  }
+}
