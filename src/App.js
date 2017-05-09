@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 import Sidebar from './Sidebar';
-import Content from './Content';
+import List from './List';
+import Details from './Details';
 
 class App extends Component {
   render() {
     return (
       <div id="wrapper">
         <Sidebar />
-        <Content />
+        <Route exact path="/" component={List}/>
+        <Route path="/Details" component={Details}/>
       </div>
     )
   }
