@@ -6,7 +6,7 @@ const ProductCard = ({sale, price, img}) => {
       <div className="product-card">
         { sale && <span className="product-card__sale">Sale</span> }
         <img className="product-card__photo" src={img} alt="" />
-        <a className={`product-card__link ${sale? '' : 'product-card__link_sale' }`} href="#">$170</a>
+        <a className={`product-card__link ${sale? '' : 'product-card__link_sale' }`} href="#">{price}</a>
       </div>
     </div>
   )
