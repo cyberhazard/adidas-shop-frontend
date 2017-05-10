@@ -59,10 +59,6 @@ body {
   overflow: auto
 }
 
-.sidebar__logo {
-  margin: 50px 0 40px
-}
-
 .search {
   width: 100%;
   position: relative;
@@ -438,9 +434,7 @@ body {
     flex-direction: row;
     padding: 12px
   }
-  .sidebar__logo {
-    height: 30px
-  }
+
   .menu,
   .search {
     display: none

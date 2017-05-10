@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from './logo.png';
+import { LogoImg } from './styled'
 
 const Logo = () => {
   return (
     <Link to="/">
-      <img className="sidebar__logo" src={logo} alt="" />
+      <LogoImg src={logo} alt="" />
     </Link>
   )
 }
