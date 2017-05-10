@@ -88,7 +88,7 @@ class Menu extends React.Component {
                  key={index} >
               <span>{item.label}</span>
               {
-                item.active && <Submenu key={index} menu={item.submenu} />
+                item.active && item.submenu && <Submenu key={index} menu={item.submenu} />
               }
             </div>
           ))
