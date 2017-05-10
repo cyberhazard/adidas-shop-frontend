@@ -1,12 +1,13 @@
 import React from 'react';
 import searchImg from './search.svg';
+import { InputImage, Input, StyledSearch } from './styled';
 
 const Search = () => {
   return (
-    <div className="search">
-      <img className="search__image" src={searchImg} alt="" />
-      <input className="search__input" />
-    </div>
+    <StyledSearch>
+      <InputImage src={searchImg} alt="" />
+      <Input />
+    </StyledSearch>
   )
 }
 
