@@ -60,67 +60,6 @@ body {
 }
 
 
-.menu {
-  text-align: center;
-  text-transform: uppercase
-}
-
-.menu__submenu {
-  margin: 32px 0 56px
-}
-
-.menu__item {
-  font-family: "Avenir Next";
-  font-size: 24px;
-  font-weight: 700;
-  margin: 30px 0;
-  color: #3c3c3c;
-  cursor: pointer;
-  position: relative;
-  transition: .3s
-}
-
-.menu__item:hover {
-  color: #fff
-}
-
-.menu__item_selected {
-  color: #fff
-}
-
-.menu__item_selected span {
-  position: relative
-}
-
-.menu__item_selected span:after {
-  content: '\f078';
-  position: absolute;
-  top: 8px;
-  right: -18px;
-  font-family: FontAwesome;
-  font-size: 12px
-}
-
-.menu__subitem {
-  margin: 24px 0
-}
-
-.menu__link {
-  font-family: "Andale Mono";
-  font-size: 24px;
-  font-weight: 400;
-  color: #3c3c3c;
-  transition: .3s
-}
-
-.menu__link:hover {
-  color: #fff
-}
-
-.menu__link_active {
-  color: #fff
-}
-
 .content {
   -webkit-box-flex: 2;
   -ms-flex-positive: 2;
@@ -412,9 +351,6 @@ body {
     padding: 12px
   }
 
-  .menu {
-    display: none
-  }
   .content {
     padding-top: 15px;
     height: calc(100vh - 64px)
