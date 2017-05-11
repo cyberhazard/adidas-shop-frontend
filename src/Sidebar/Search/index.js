@@ -1,11 +1,11 @@
 import React from 'react';
-import { Wrapper, Input, SearchImage } from './styled'
+import { Wrapper, Input, Icon } from './styled'
 
 
 const Search = () => (
   <Wrapper>
     <Input type="text"/>
-    <SearchImage src={require('./search.svg')} alt=""/>
+    <Icon src={require('./search.svg')} alt=""/>
   </Wrapper>
 );
 

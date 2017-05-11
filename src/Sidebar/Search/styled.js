@@ -18,7 +18,7 @@ export const Input = styled.input`
   font-weight: 700;
 `
 
-export const SearchImage = styled.img`
+export const Icon = styled.img`
   position: absolute;
   left: 30px;
   bottom: 10px;
