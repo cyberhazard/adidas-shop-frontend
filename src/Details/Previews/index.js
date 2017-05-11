@@ -21,7 +21,7 @@ const Previews = () => (
       <Item img={require('./../../assets/images/preview-1.png')} />
       <Item img={require('./../../assets/images/preview-2.png')} />
       <Item img={require('./../../assets/images/preview-3.png')} />
-      <Item img={require('./../../assets/images/preview-2.png')} selected />
+      <Item img={require('./../../assets/images/preview-2.png')} isSelected />
       <Item>See more photos</Item>
     </Wrapper>
   </div>
