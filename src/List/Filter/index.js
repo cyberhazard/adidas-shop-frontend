@@ -5,7 +5,7 @@ const Filter = () => (
   <Wrapper>
     <Image src={require('./filter.png')} />
     <div>
-      <Button selected>Man</Button>
+      <Button isSelected>Man</Button>
       <Button>Woman</Button>
     </div>
     <div>
@@ -15,7 +15,7 @@ const Filter = () => (
       <Button mini>38</Button>
       <Button mini>39</Button>
       <Button mini>40</Button>
-      <Button mini selected>41</Button>
+      <Button mini isSelected>41</Button>
       <Button mini>42</Button>
     </div>
   </Wrapper>

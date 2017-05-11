@@ -4,9 +4,9 @@ import { StyledMenu, MenuItem, Text, StyledLink } from './styled';
 const Menu = () => (
   <StyledMenu>
     <MenuItem>
-      <Text selected>Sports</Text>
+      <Text isSelected>Sports</Text>
       <nav>
-        <StyledLink to="/" selected>Shoes</StyledLink>
+        <StyledLink to="/" isSelected>Shoes</StyledLink>
         <StyledLink to="/">Clothing</StyledLink>
         <StyledLink to="/">Accessories</StyledLink>
       </nav>

@@ -16,7 +16,7 @@ export const Text = styled.span`
   position: relative;
   cursor: pointer;
   color: #303030;
-  ${p=>p.selected && 'color: #ffffff;'}
+  ${p=>p.isSelected && 'color: #ffffff;'}
   font-family: "Avenir Next";
   font-size: 24px;
   font-weight: 700;
@@ -25,7 +25,7 @@ export const Text = styled.span`
   &:hover {
     color: #ffffff;
   }
-  ${p=>p.selected && `
+  ${p=>p.isSelected && `
     &:after {
       content: "\uf078";
       font-family: 'FontAwesome';
@@ -40,7 +40,7 @@ export const Text = styled.span`
 export const StyledLink = styled(Link)`
   display: block;
   color: #303030;
-  ${p=>p.selected && 'color: #ffffff;'}
+  ${p=>p.isSelected && 'color: #ffffff;'}
   font-family: "Andale Mono";
   font-size: 24px;
   font-weight: 400;

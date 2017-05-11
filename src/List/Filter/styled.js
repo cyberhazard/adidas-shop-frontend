@@ -18,7 +18,7 @@ export const Button = styled.button`
   font-weight: 700;
   text-transform: uppercase;
   color: #d6d6d6;
-  ${p=>p.selected && 'color: #4d42f8;'}
+  ${p=>p.isSelected && 'color: #4d42f8;'}
   background-color: transparent;
   border: none;
   margin-right: 20px;
