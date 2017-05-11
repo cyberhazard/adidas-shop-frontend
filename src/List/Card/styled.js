@@ -35,7 +35,7 @@ export const StyledLink = styled(Link)`
   font-weight: 700;
 `
 
-export const Sale = styled.span`
+export const Label = styled.span`
   position: absolute;
   top: 6px;
   right: 10px;

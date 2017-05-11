@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Sale } from './../List/Card/styled';
+import { Label } from './../List/Card/styled';
 import Colors from './Colors';
 
 const Wrapper = styled.div`
@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   right: 30px;
 `
 
-const StyledSale = styled(Sale)`
+const StyledLabel = styled(Label)`
   display: inline-block;
   position: static;
   vertical-align: super;
@@ -29,7 +29,7 @@ const Price = styled.h2`
 const TopRight = () => (
   <Wrapper>
     <Colors />
-    <StyledSale>Sale</StyledSale>
+    <StyledLabel>Sale</StyledLabel>
     <Price>170$</Price>
   </Wrapper>
 )

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper, Cover, Image, StyledLink, Sale, CustomCol } from './styled';
+import { Wrapper, Cover, Image, StyledLink, Label, CustomCol } from './styled';
 
 const Card = ({img, price, sale}) => (
   <CustomCol xs={12} sm={6} md={4} lg={3}>
@@ -9,7 +9,7 @@ const Card = ({img, price, sale}) => (
       </Cover>
       <StyledLink to="/details" sale={sale}>{price}</StyledLink>
       {
-        sale && <Sale>Sale</Sale>
+        sale && <Label>Sale</Label>
       }
     </Wrapper>
   </CustomCol>
