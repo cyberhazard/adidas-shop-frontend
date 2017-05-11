@@ -1,18 +1,19 @@
 import React from 'react';
+import { Wrapper, MenuItem, MenuLink } from './styled';
 
 const Submenu = () => {
   return (
-    <nav className="menu__submenu">
-      <div className="menu__subitem">
-        <a className="menu__link menu__link_active" href="#">Shoes</a>
-      </div>
-      <div className="menu__subitem">
-        <a className="menu__link" href="#">Clothing</a>
-      </div>
-      <div className="menu__subitem">
-        <a className="menu__link" href="#">Accesories</a>
-      </div>
-    </nav>
+    <Wrapper>
+      <MenuItem>
+        <MenuLink to="#" selected>Shoes</MenuLink>
+      </MenuItem>
+      <MenuItem>
+        <MenuLink to="#">Clothing</MenuLink>
+      </MenuItem>
+      <MenuItem>
+        <MenuLink to="#">Accesories</MenuLink>
+      </MenuItem>
+    </Wrapper>
   )
 };
 

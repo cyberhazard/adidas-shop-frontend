@@ -1,20 +1,21 @@
 import React from 'react';
 import Submenu from './Submenu';
+import { Wrapper, MenuItem, Span } from './styled';
 
 const Menu = () => {
   return (
-    <nav className="menu">
-      <div className="menu__item menu__item_selected">
-        <span>Sports</span>
+    <Wrapper>
+      <MenuItem selected>
+        <Span selected>Sports</Span>
         <Submenu />
-      </div>
-      <div className="menu__item">
-        <span>Brands</span>
-      </div>
-      <div className="menu__item">
-        <span>Micoach</span>
-      </div>
-    </nav>
+      </MenuItem>
+      <MenuItem>
+        <Span>Brands</Span>
+      </MenuItem>
+      <MenuItem>
+        <Span>Micoach</Span>
+      </MenuItem>
+    </Wrapper>
   )
 };
 
