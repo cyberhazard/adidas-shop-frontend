@@ -4,9 +4,6 @@ import Filter from './Filter';
 import Card from './Card';
 import { Grid, Row } from 'react-flexbox-grid';
 import { Col } from 'react-flexbox-grid';
-import prodImg1 from './../assets/images/prod-1.png';
-import prodImg2 from './../assets/images/prod-2.png';
-import prodImg3 from './../assets/images/prod-3.png';
 
 export const CustomCol = styled(Col)`
   margin: 6px 0;
@@ -29,7 +26,11 @@ let products =  new Array(300).fill(0).map(el=>({
   key: generateId(),
   price: `$ ${generateNumber(100,300)}`,
   sale: !Math.round(Math.random()),
-  img: [prodImg1,prodImg2,prodImg3][generateNumber(0,2)],
+  img: [
+    require('./../assets/images/prod-1.png'),
+    require('./../assets/images/prod-2.png'),
+    require('./../assets/images/prod-3.png')
+    ][generateNumber(0,2)],
 }))
 
 export default class List extends React.Component {
