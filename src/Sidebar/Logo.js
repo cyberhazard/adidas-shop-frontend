@@ -6,13 +6,10 @@ const Wrapper = styled.div`
   text-align: center;
 `
 
-const Logo = () => (
+export default () => (
   <Wrapper>
     <Link to="/">
       <img src={require('./../assets/images/logo.png')} alt="Logo" />
     </Link>
   </Wrapper>
 );
-
-
-export default Logo;

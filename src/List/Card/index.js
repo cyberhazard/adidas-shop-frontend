@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wrapper, Cover, Image, StyledLink, Label } from './styled';
 
-const Card = ({img, price, sale}) => (
+export default ({img, price, sale}) => (
   <Wrapper>
     <Cover>
       <Image src={img} alt=""/>
@@ -11,6 +11,4 @@ const Card = ({img, price, sale}) => (
       sale && <Label>Sale</Label>
     }
   </Wrapper>
-)
-
-export default Card
+);

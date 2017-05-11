@@ -14,7 +14,7 @@ const BigImage = styled.img`
   margin: 0 auto;
 `
 
-const Carousel = () => (
+export default () => (
   <div>
     <BigImage src={require('./../../assets/images/big-image.png')} />
     <Wrapper>
@@ -26,5 +26,3 @@ const Carousel = () => (
     </Wrapper>
   </div>
 );
-
-export default Carousel;

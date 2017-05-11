@@ -27,11 +27,10 @@ const Save = styled.button`
   text-transform: uppercase;
 `
 
-const TopLeft = () => (
+export default () => (
   <Wrapper>
     <Title>Ultra boost</Title>
     <Save>Save</Save>
   </Wrapper>
 )
 
-export default TopLeft;

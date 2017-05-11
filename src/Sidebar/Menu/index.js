@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledMenu, MenuItem, Text, StyledLink } from './styled';
 
-const Menu = () => (
+export default () => (
   <StyledMenu>
     <MenuItem>
       <Text isSelected>Sports</Text>
@@ -19,5 +19,3 @@ const Menu = () => (
     </MenuItem>
   </StyledMenu>
 );
-
-export default Menu;

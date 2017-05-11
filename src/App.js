@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <Wrapper>
@@ -22,5 +22,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

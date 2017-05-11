@@ -14,8 +14,6 @@ const Button = styled.button`
   cursor: pointer;
 `
 
-const BuyButton = () => (
+export default () => (
   <Button>Buy now</Button>
-)
-
-export default BuyButton
+);

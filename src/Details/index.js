@@ -6,7 +6,7 @@ import TopRight from './TopRight';
 import Carousel from './Carousel';
 import Description from './Description'
 
-const Details = () => (
+export default () => (
   <Wrapper>
     <ProductInfo>
       <TopLeft />
@@ -17,5 +17,3 @@ const Details = () => (
     <BuyButton />
   </Wrapper>
 )
-
-export default Details;

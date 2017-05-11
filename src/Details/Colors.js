@@ -16,13 +16,11 @@ const Button = styled.button`
   cursor: pointer;
 `
 
-const Colors = () => (
+export default () => (
   <Wrapper>
     <Button color="#C5C5C5" />
     <Button color="#4C88CB" />
     <Button color="#494949" />
     <Button />
   </Wrapper>
-)
-
-export default Colors;
+);

@@ -25,12 +25,10 @@ const Price = styled.h2`
   font-weight: 700;
 `
 
-const TopRight = () => (
+export default () => (
   <Wrapper>
     <Colors />
     <StyledLabel>Sale</StyledLabel>
     <Price>170$</Price>
   </Wrapper>
 )
-
-export default TopRight;

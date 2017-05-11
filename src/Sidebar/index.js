@@ -12,12 +12,10 @@ const Wrapper = styled.div`
   overflow: auto;
 `
 
-const Sidebar = () => (
+export default () => (
   <Wrapper>
     <Logo />
     <Search />
     <Menu />
   </Wrapper>
 );
-
-export default Sidebar;

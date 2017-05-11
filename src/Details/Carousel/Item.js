@@ -19,11 +19,9 @@ const Image = styled.img`
   width: 100%;
 `
 
-const Item = ({img, isSelected, children}) => (
+export default ({img, isSelected, children}) => (
   <Wrapper isSelected={isSelected}>
     { img && <Image src={img} /> }
     { children }
   </Wrapper>
-)
-
-export default Item;
+);

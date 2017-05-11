@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wrapper, Image, Button, Label } from './styled';
 
-const Filter = () => (
+export default () => (
   <Wrapper>
     <Image src={require('./filter.png')} />
     <div>
@@ -20,5 +20,3 @@ const Filter = () => (
     </div>
   </Wrapper>
 );
-
-export default Filter;
