@@ -25,7 +25,6 @@ const Price = styled.h2`
   font-weight: 700;
 `
 
-
 const TopRight = () => (
   <Wrapper>
     <Colors />
