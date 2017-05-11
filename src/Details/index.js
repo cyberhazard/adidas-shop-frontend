@@ -3,7 +3,7 @@ import { Wrapper, ProductInfo } from './styled';
 import BuyButton from './BuyButton';
 import TopLeft from './TopLeft';
 import TopRight from './TopRight';
-import Previews from './Previews';
+import Carousel from './Carousel';
 import Description from './Description'
 
 const Details = () => (
@@ -11,7 +11,7 @@ const Details = () => (
     <ProductInfo>
       <TopLeft />
       <TopRight />
-      <Previews />
+      <Carousel />
       <Description />
     </ProductInfo>
     <BuyButton />

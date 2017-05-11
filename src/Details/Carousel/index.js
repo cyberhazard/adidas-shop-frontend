@@ -14,7 +14,7 @@ const BigImage = styled.img`
   margin: 0 auto;
 `
 
-const Previews = () => (
+const Carousel = () => (
   <div>
     <BigImage src={require('./../../assets/images/big-image.png')} />
     <Wrapper>
@@ -27,4 +27,4 @@ const Previews = () => (
   </div>
 );
 
-export default Previews;
+export default Carousel;
