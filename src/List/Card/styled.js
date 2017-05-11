@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Col } from 'react-flexbox-grid';
-
-export const CustomCol = styled(Col)`
-  margin: 6px 0;
-`
 
 export const Wrapper = styled.div`
   position: relative;

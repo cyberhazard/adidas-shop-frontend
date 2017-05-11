@@ -3,9 +3,14 @@ import styled from 'styled-components';
 import Filter from './Filter';
 import Card from './Card';
 import { Grid, Row } from 'react-flexbox-grid';
+import { Col } from 'react-flexbox-grid';
 import prodImg1 from './../assets/images/prod-1.png';
 import prodImg2 from './../assets/images/prod-2.png';
 import prodImg3 from './../assets/images/prod-3.png';
+
+export const CustomCol = styled(Col)`
+  margin: 6px 0;
+`
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -35,7 +40,11 @@ export default class List extends React.Component {
         <CutomGrid fluid>
           <Row>
             {
-              products.map(product=><Card {...product} />)
+              products.map(product=>(
+                <CustomCol xs={12} sm={6} md={4} lg={3} key={product.key}>
+                  <Card {...product} />
+                </CustomCol>
+              ))
             }
           </Row>
         </CutomGrid>
