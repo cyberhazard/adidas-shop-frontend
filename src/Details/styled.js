@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
 `
 
-export const Order = styled.div`
+export const ProductInfo = styled.div`
   flex-grow: 2;
   overflow: auto;
   position: relative;

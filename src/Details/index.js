@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper, Order } from './styled';
+import { Wrapper, ProductInfo } from './styled';
 import BuyButton from './BuyButton';
 import TopLeft from './TopLeft';
 import TopRight from './TopRight';
@@ -8,12 +8,12 @@ import Description from './Description'
 
 const Details = () => (
   <Wrapper>
-    <Order>
+    <ProductInfo>
       <TopLeft />
       <TopRight />
       <Previews />
       <Description />
-    </Order>
+    </ProductInfo>
     <BuyButton />
   </Wrapper>
 )
