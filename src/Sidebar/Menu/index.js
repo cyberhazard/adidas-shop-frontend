@@ -1,22 +1,21 @@
 import React from 'react';
-import Submenu from './Submenu';
-import { Wrapper, MenuItem, Span } from './styled';
+import { StyledMenu, MenuItem, MainLink, SubLink } from './styled';
 
-const Menu = () => {
-  return (
-    <Wrapper>
-      <MenuItem selected>
-        <Span selected>Sports</Span>
-        <Submenu />
-      </MenuItem>
-      <MenuItem>
-        <Span>Brands</Span>
-      </MenuItem>
-      <MenuItem>
-        <Span>Micoach</Span>
-      </MenuItem>
-    </Wrapper>
-  )
-};
-
-export default Menu
+export default () => (
+  <StyledMenu>
+    <MenuItem>
+      <MainLink to="/" isSelected>Sports</MainLink>
+      <nav>
+        <SubLink to="/" isSelected>Shoes</SubLink>
+        <SubLink to="/">Clothing</SubLink>
+        <SubLink to="/">Accessories</SubLink>
+      </nav>
+    </MenuItem>
+    <MenuItem>
+      <MainLink to="/" >Brands</MainLink>
+    </MenuItem>
+    <MenuItem>
+      <MainLink to="/" >Micoach</MainLink>
+    </MenuItem>
+  </StyledMenu>
+);

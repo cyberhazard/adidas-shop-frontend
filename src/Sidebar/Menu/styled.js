@@ -1,36 +1,53 @@
-// menu menu__item menu__item_selected
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import media from './../../media';
 
-export const Wrapper = styled.nav`
+export const StyledMenu = styled.nav`
   text-align: center;
-  text-transform: uppercase;
-  ${media.md`display:none;`}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
+
 export const MenuItem = styled.div`
+  margin: 12px 0;
+`
+
+export const MainLink = styled(Link)`
+  position: relative;
+  cursor: pointer;
+  color: #303030;
+  ${p=>p.isSelected && 'color: #ffffff;'}
   font-family: "Avenir Next";
   font-size: 24px;
   font-weight: 700;
-  margin: 30px 0;
-  color: #3c3c3c;
-  cursor: pointer;
-  position: relative;
+  text-transform: uppercase;
   transition: .3s;
-  ${props=>props.selected? 'color: #fff;'   : ''}
   &:hover {
-    color: #fff;
+    color: #ffffff;
   }
-`;
+  ${p=>p.isSelected && `
+    &:after {
+      content: "\uf078";
+      font-family: 'FontAwesome';
+      font-size: 14px;
+      position: absolute;
+      top: 7px;
+      right: -22px;
+    }
+  `}
+`
 
-export const Span = styled.span`
-  ${props=>props.selected? `position: relative;
-  &:after {
-    content: '\\f078';
-    position: absolute;
-    top: 8px;
-    right: -18px;
-    font-family: FontAwesome;
-    font-size: 12px;
+export const SubLink = styled(Link)`
+  display: block;
+  color: #303030;
+  ${p=>p.isSelected && 'color: #ffffff;'}
+  font-family: "Andale Mono";
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 26px 0;
+  transition: .3s;
+  &:hover {
+    color: #ffffff;
   }
-  ` :''}
-`;
+`

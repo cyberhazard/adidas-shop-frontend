@@ -1,33 +1,55 @@
 import React from 'react';
+import styled from 'styled-components';
 import Filter from './Filter';
 import Card from './Card';
-import prod1Img from './Card/prod-1.png';
-import prod2Img from './Card/prod-2.png';
-import prod3Img from './Card/prod-3.png';
+import { Grid, Row } from 'react-flexbox-grid';
+import { Col } from 'react-flexbox-grid';
+
+export const CustomCol = styled(Col)`
+  margin: 6px 0;
+`
+
+const Wrapper = styled.div`
+  height: 100vh;
+  overflow: auto;
+  flex-grow: 2;
+`
+
+const CutomGrid = styled(Grid)`
+  padding: 0 1.4rem !important;
+`
 
 const generateId = () => Date.now()+'-'+Math.round(Math.random()*10000000);
 const generateNumber = (min,max) => Math.floor(Math.random()*(max-min+1)+min);
 
 let products =  new Array(300).fill(0).map(el=>({
-  id: generateId(),
-  title: '',
+  key: generateId(),
   price: `$ ${generateNumber(100,300)}`,
   sale: !Math.round(Math.random()),
-  cover: [prod1Img,prod2Img,prod3Img][generateNumber(0,2)],
-  images: []
+  img: [
+    require('./../assets/images/prod-1.png'),
+    require('./../assets/images/prod-2.png'),
+    require('./../assets/images/prod-3.png')
+    ][generateNumber(0,2)],
 }))
 
-const Content = () => {
-  return (
-    <div className="content">
-      <Filter />
-      <div className="products row">
-        {
-          products.map(product=><Card price={product.price} img={product.cover} key={product.id} sale={product.sale} />)
-        }
-      </div>
-    </div>
-  )
-};
-
-export default Content;
+export default class List extends React.Component {
+  render(){
+    return (
+      <Wrapper>
+        <Filter />
+        <CutomGrid fluid>
+          <Row>
+            {
+              products.map(product=>(
+                <CustomCol xs={12} sm={6} md={4} lg={3} key={product.key}>
+                  <Card {...product} />
+                </CustomCol>
+              ))
+            }
+          </Row>
+        </CutomGrid>
+      </Wrapper>
+    )
+  }
+}

@@ -1,27 +1,25 @@
 import styled from 'styled-components';
-import media from './../../media';
 
-export const StyledSearch = styled.div`
-  width: 100%;
+export const Wrapper = styled.div`
   position: relative;
-  padding: 0 22px;
-  ${media.md`display: none;`}
-`;
+  padding: 40px 22px 0;
+  margin-bottom: 100px;
+`
 
 export const Input = styled.input`
   width: 100%;
-  height: 100%;
-  font-family: "Andale Mono";
+  padding-left: 46px;
   background-color: transparent;
   border: none;
-  border-bottom: 4px solid #242424;
-  color: #fff;
-  font-size: 28px;
-  padding-left: 60px
-`;
+  border-bottom: 4px solid #373737;
+  color: #ffffff;
+  font-family: "Avenir Next";
+  font-size: 24px;
+  font-weight: 700;
+`
 
-export const InputImage = styled.img`
+export const Icon = styled.img`
   position: absolute;
-  bottom: 12px;
-  left: 36px
-`;
+  left: 30px;
+  bottom: 10px;
+`
