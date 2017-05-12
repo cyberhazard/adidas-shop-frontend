@@ -12,7 +12,7 @@ export const MenuItem = styled.div`
   margin: 12px 0;
 `
 
-export const Text = styled.span`
+export const MainLink = styled(Link)`
   position: relative;
   cursor: pointer;
   color: #303030;
@@ -37,7 +37,7 @@ export const Text = styled.span`
   `}
 `
 
-export const StyledLink = styled(Link)`
+export const SubLink = styled(Link)`
   display: block;
   color: #303030;
   ${p=>p.isSelected && 'color: #ffffff;'}

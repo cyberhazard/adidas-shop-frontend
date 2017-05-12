@@ -1,21 +1,21 @@
 import React from 'react';
-import { StyledMenu, MenuItem, Text, StyledLink } from './styled';
+import { StyledMenu, MenuItem, MainLink, SubLink } from './styled';
 
 export default () => (
   <StyledMenu>
     <MenuItem>
-      <Text isSelected>Sports</Text>
+      <MainLink to="/" isSelected>Sports</MainLink>
       <nav>
-        <StyledLink to="/" isSelected>Shoes</StyledLink>
-        <StyledLink to="/">Clothing</StyledLink>
-        <StyledLink to="/">Accessories</StyledLink>
+        <SubLink to="/" isSelected>Shoes</SubLink>
+        <SubLink to="/">Clothing</SubLink>
+        <SubLink to="/">Accessories</SubLink>
       </nav>
     </MenuItem>
     <MenuItem>
-      <Text>Brands</Text>
+      <MainLink to="/" >Brands</MainLink>
     </MenuItem>
     <MenuItem>
-      <Text>Micoach</Text>
+      <MainLink to="/" >Micoach</MainLink>
     </MenuItem>
   </StyledMenu>
 );
