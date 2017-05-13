@@ -1,10 +1,11 @@
+/* eslint-disable no-param-reassign */
+
 import { css } from 'styled-components';
 
 const sizes = {
   lg: 1435,
   md: 970,
 };
-
 
 const media = Object.keys(sizes).reduce((accumulator, label) => {
   const emSize = sizes[label] / 16;

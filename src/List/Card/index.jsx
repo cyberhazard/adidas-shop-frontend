@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Wrapper, Cover, Image, StyledLink, Label } from './styled';
 
-export default ({ img, price, sale }) => (
+const Card = ({ img, price, sale }) => (
   <Wrapper>
     <Cover>
       <Image src={img} alt="" />
@@ -12,3 +13,11 @@ export default ({ img, price, sale }) => (
     }
   </Wrapper>
 );
+
+Card.propTypes = {
+  img: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  sale: PropTypes.bool.isRequired,
+};
+
+export default Card;

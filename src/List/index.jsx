@@ -1,3 +1,5 @@
+/* eslint-disable no-mixed-operators */
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -32,23 +34,19 @@ const products = new Array(300).fill(0).map(() => ({
   ][generateNumber(0, 2)],
 }));
 
-export default class List extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <Filter />
-        <CutomGrid fluid>
-          <Row>
-            {
-              products.map(product => (
-                <CustomCol xs={12} sm={6} md={4} lg={3} key={product.key}>
-                  <Card {...product} />
-                </CustomCol>
-              ))
-            }
-          </Row>
-        </CutomGrid>
-      </Wrapper>
-    );
-  }
-}
+export default () => (
+  <Wrapper>
+    <Filter />
+    <CutomGrid fluid>
+      <Row>
+        {
+          products.map(product => (
+            <CustomCol xs={12} sm={6} md={4} lg={3} key={product.key}>
+              <Card {...product} />
+            </CustomCol>
+          ))
+        }
+      </Row>
+    </CutomGrid>
+  </Wrapper>
+);
