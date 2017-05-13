@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -20,17 +19,9 @@ const Image = styled.img`
   width: 100%;
 `;
 
-const Item = ({ img, isSelected, children }) => (
+export default ({ img, isSelected, children }) => (
   <Wrapper isSelected={isSelected}>
     { img && <Image src={img} /> }
     { children }
   </Wrapper>
 );
-
-Item.propTypes = {
-  img: PropTypes.string.isRequired,
-  isSelected: PropTypes.bool.isRequired,
-  children: PropTypes.element,
-};
-
-export default Item;
