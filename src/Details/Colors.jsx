@@ -1,5 +1,3 @@
-/* eslint-disable no-confusing-arrow */
-
 import React from 'react';
 import styled from 'styled-components';
 
@@ -13,7 +11,7 @@ const Button = styled.button`
   height: 18px;
   border-radius: 50%;
   border: none;
-  background-color: ${p => p.color ? `${p.color};` : '#E1E1E1;'}
+  background-color: ${p => (p.color ? `${p.color};` : '#E1E1E1;')}
   margin-right: 13px;
   cursor: pointer;
 `;
