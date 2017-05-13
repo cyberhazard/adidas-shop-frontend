@@ -1,7 +1,6 @@
 import React from 'react';
 import { Wrapper, Input, Icon } from './styled';
 
-
 export default () => (
   <Wrapper>
     <Input type="text" />

@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import Filter from './Filter';
 import Card from './Card';
-import { Grid, Row } from 'react-flexbox-grid';
-import { Col } from 'react-flexbox-grid';
 
 export const CustomCol = styled(Col)`
   margin: 6px 0;
@@ -22,7 +21,7 @@ const CutomGrid = styled(Grid)`
 const generateId = () => `${Date.now()}-${Math.round(Math.random() * 10000000)}`;
 const generateNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
-const products = new Array(300).fill(0).map(el => ({
+const products = new Array(300).fill(0).map(() => ({
   key: generateId(),
   price: `$ ${generateNumber(100, 300)}`,
   sale: !Math.round(Math.random()),
