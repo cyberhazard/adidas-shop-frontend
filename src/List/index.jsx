@@ -1,5 +1,3 @@
-/* eslint-disable no-mixed-operators */
-
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -21,7 +19,7 @@ const CutomGrid = styled(Grid)`
 `;
 
 const generateId = () => `${Date.now()}-${Math.round(Math.random() * 10000000)}`;
-const generateNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+const generateNumber = (min, max) => Math.floor((Math.random() * ((max - min) + 1)) + min);
 
 const products = new Array(300).fill(0).map(() => ({
   key: generateId(),
