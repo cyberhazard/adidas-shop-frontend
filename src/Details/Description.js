@@ -7,11 +7,11 @@ const Wrapper = styled.p`
   font-weight: 500;
   color: #d8d8d8;
   padding: 4px;
-`
+`;
 
 const Bold = styled.span`
   color: #6e6e6e;
-`
+`;
 
 export default () => (
   <Wrapper>

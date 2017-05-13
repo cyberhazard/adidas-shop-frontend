@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   background-color: #0F0F0F;
   padding-top: 50px;
   overflow: auto;
-`
+`;
 
 export default () => (
   <Wrapper>

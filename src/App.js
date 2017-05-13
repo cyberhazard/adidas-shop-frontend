@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   widht: 100%;
   min-height: 100vh;
   display: flex;
-`
+`;
 
 export default class App extends Component {
   render() {

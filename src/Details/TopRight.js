@@ -7,13 +7,13 @@ const Wrapper = styled.div`
   position: absolute;
   top: 30px;
   right: 30px;
-`
+`;
 
 const StyledLabel = styled(Label)`
   display: inline-block;
   position: static;
   vertical-align: super;
-`
+`;
 
 const Price = styled.h2`
   position: absolute;
@@ -23,7 +23,7 @@ const Price = styled.h2`
   font-family: "Avenir Next";
   font-size: 80px;
   font-weight: 700;
-`
+`;
 
 export default () => (
   <Wrapper>
@@ -31,4 +31,4 @@ export default () => (
     <StyledLabel>Sale</StyledLabel>
     <Price>170$</Price>
   </Wrapper>
-)
+);
