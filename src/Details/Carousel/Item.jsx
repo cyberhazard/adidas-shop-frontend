@@ -1,11 +1,9 @@
-/* eslint-disable no-confusing-arrow */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  border: 4px solid ${p => p.isSelected ? '#E9E9EB' : 'transparent'};
+  border: 4px solid ${p => (p.isSelected ? '#E9E9EB' : 'transparent')};
   flex: 0 0 166px;
   display: flex;
   justify-content: center;
