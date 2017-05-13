@@ -15,6 +15,7 @@ const Bold = styled.span`
 
 export default () => (
   <Wrapper>
-    <Bold>Adidas</Bold> is a German multinational corporation, headquartered in Herzogenaurach, Germany, that designs and manufactures shoes, clothing and accessories.
+    <Bold>Adidas</Bold> is a German multinational corporation, headquartered in Herzogenaurach,
+    Germany, that designs and manufactures shoes, clothing and accessories.
   </Wrapper>
 );

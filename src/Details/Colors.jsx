@@ -1,3 +1,5 @@
+/* eslint-disable no-confusing-arrow */
+
 import React from 'react';
 import styled from 'styled-components';
 
