@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Sidebar from './Sidebar';
@@ -11,18 +11,10 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { };
-  }
-  render() {
-    return (
-      <Wrapper>
-        <Sidebar />
-        <Route exact path="/" component={List} />
-        <Route path="/details" component={Details} />
-      </Wrapper>
-    );
-  }
-}
+export default () => (
+  <Wrapper>
+    <Sidebar />
+    <Route exact path="/" component={List} />
+    <Route path="/details" component={Details} />
+  </Wrapper>
+);
