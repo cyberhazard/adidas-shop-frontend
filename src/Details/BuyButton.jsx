@@ -12,7 +12,7 @@ const Button = styled.button`
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
-`
+`;
 
 export default () => (
   <Button>Buy now</Button>

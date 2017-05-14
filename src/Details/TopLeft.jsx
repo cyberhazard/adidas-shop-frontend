@@ -9,12 +9,12 @@ const Wrapper = styled.div`
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Avenir Next";
-`
+`;
 
 const Title = styled.h1`
   color: #3a3a3a;
   font-size: 64px;
-`
+`;
 
 const Save = styled.button`
   width: 75px;
@@ -25,12 +25,12 @@ const Save = styled.button`
   color: #ffffff;
   font-size: 18px;
   text-transform: uppercase;
-`
+`;
 
 export default () => (
   <Wrapper>
     <Title>Ultra boost</Title>
     <Save>Save</Save>
   </Wrapper>
-)
+);
 

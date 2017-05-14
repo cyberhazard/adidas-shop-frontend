@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   position: relative;
   padding: 40px 22px 0;
   margin-bottom: 100px;
-`
+`;
 
 export const Input = styled.input`
   width: 100%;
@@ -16,10 +16,10 @@ export const Input = styled.input`
   font-family: "Avenir Next";
   font-size: 24px;
   font-weight: 700;
-`
+`;
 
 export const Icon = styled.img`
   position: absolute;
   left: 30px;
   bottom: 10px;
-`
+`;

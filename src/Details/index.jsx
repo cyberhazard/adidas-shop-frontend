@@ -4,7 +4,7 @@ import BuyButton from './BuyButton';
 import TopLeft from './TopLeft';
 import TopRight from './TopRight';
 import Carousel from './Carousel';
-import Description from './Description'
+import Description from './Description';
 
 export default () => (
   <Wrapper>
@@ -16,4 +16,4 @@ export default () => (
     </ProductInfo>
     <BuyButton />
   </Wrapper>
-)
+);

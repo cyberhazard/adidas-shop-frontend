@@ -5,14 +5,14 @@ import Item from './Item';
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-`
+`;
 
 const BigImage = styled.img`
   display: block;
   max-width: 70%;
   max-height: 500px;
   margin: 0 auto;
-`
+`;
 
 export default () => (
   <div>

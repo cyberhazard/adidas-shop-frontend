@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  border: 4px solid ${p=>p.isSelected? '#E9E9EB' : 'transparent' };
+  border: 4px solid ${p => (p.isSelected ? '#E9E9EB' : 'transparent')};
   flex: 0 0 166px;
   display: flex;
   justify-content: center;
@@ -13,13 +13,13 @@ const Wrapper = styled.div`
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
-`
+`;
 
 const Image = styled.img`
   width: 100%;
-`
+`;
 
-export default ({img, isSelected, children}) => (
+export default ({ img, isSelected, children }) => (
   <Wrapper isSelected={isSelected}>
     { img && <Image src={img} /> }
     { children }

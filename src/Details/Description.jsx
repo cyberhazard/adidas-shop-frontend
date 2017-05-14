@@ -7,14 +7,15 @@ const Wrapper = styled.p`
   font-weight: 500;
   color: #d8d8d8;
   padding: 4px;
-`
+`;
 
 const Bold = styled.span`
   color: #6e6e6e;
-`
+`;
 
 export default () => (
   <Wrapper>
-    <Bold>Adidas</Bold> is a German multinational corporation, headquartered in Herzogenaurach, Germany, that designs and manufactures shoes, clothing and accessories.
+    <Bold>Adidas</Bold> is a German multinational corporation, headquartered in Herzogenaurach,
+    Germany, that designs and manufactures shoes, clothing and accessories.
   </Wrapper>
 );
