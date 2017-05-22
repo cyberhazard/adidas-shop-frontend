@@ -12,7 +12,7 @@ export const MenuItem = styled.div`
   margin: 12px 0;
 `;
 
-export const MainLink = styled(NavLink)`
+export const MainLink = styled.button`
   position: relative;
   cursor: pointer;
   color: #303030;
@@ -21,6 +21,8 @@ export const MainLink = styled(NavLink)`
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
+  background-color: transparent;
+  border: none;
   transition: .3s;
   &:hover {
     color: #ffffff;

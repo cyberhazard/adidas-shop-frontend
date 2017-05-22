@@ -4,19 +4,22 @@ import { MainLink, MenuItem as MenuItemStyled } from './styled';
 export default class MenuItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isActive: false };
+    this.state = { isSelected: false };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState({ isActive: !this.state.isActive });
+    this.setState(prevState => ({ isSelected: !prevState.isSelected }));
   }
 
   render() {
     return (
-      <MenuItemStyled onClick={this.handleClick}>
-        <MainLink to={this.props.to} isSelected={this.state.isActive}>{this.props.title}</MainLink>
-        {this.state.isActive && this.props.children}
+      <MenuItemStyled >
+        <MainLink
+          onClick={this.handleClick}
+          isSelected={this.state.isSelected}
+        >{this.props.title}</MainLink>
+        {this.state.isSelected && this.props.children}
       </MenuItemStyled>
     );
   }
