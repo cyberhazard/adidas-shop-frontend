@@ -1,24 +1,24 @@
 import React from 'react';
-import { StyledMenu } from './styled';
-import MenuItem from './MenuItem';
-import SubLink from './SubLink';
+import { Wrapper } from './styled';
+import Menu from './Menu';
+import Link from './Link';
 
 export default () => (
-  <StyledMenu>
-    <MenuItem title="Football">
-      <SubLink to="/products/football/shoes">Shoes</SubLink>
-      <SubLink to="/products/football/clothing">Clothing</SubLink>
-      <SubLink to="/products/football/accessories">Accessories</SubLink>
-    </MenuItem>
-    <MenuItem title="Running">
-      <SubLink to="/products/running/shoes">Shoes</SubLink>
-      <SubLink to="/products/running/clothing">Clothing</SubLink>
-      <SubLink to="/products/running/accessories">Accessories</SubLink>
-    </MenuItem>
-    <MenuItem title="Basketball">
-      <SubLink to="/products/basketball/shoes">Shoes</SubLink>
-      <SubLink to="/products/basketball/clothing">Clothing</SubLink>
-      <SubLink to="/products/basketball/accessories">Accessories</SubLink>
-    </MenuItem>
-  </StyledMenu>
+  <Wrapper>
+    <Menu title="Football">
+      <Link to="/products/football/shoes">Shoes</Link>
+      <Link to="/products/football/clothing">Clothing</Link>
+      <Link to="/products/football/accessories">Accessories</Link>
+    </Menu>
+    <Menu title="Running">
+      <Link to="/products/running/shoes">Shoes</Link>
+      <Link to="/products/running/clothing">Clothing</Link>
+      <Link to="/products/running/accessories">Accessories</Link>
+    </Menu>
+    <Menu title="Basketball">
+      <Link to="/products/basketball/shoes">Shoes</Link>
+      <Link to="/products/basketball/clothing">Clothing</Link>
+      <Link to="/products/basketball/accessories">Accessories</Link>
+    </Menu>
+  </Wrapper>
 );

@@ -1,22 +1,22 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledMenu = styled.nav`
+export const Wrapper = styled.nav`
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-export const MenuItem = styled.div`
+export const Item = styled.div`
   margin: 12px 0;
 `;
 
-export const MainLink = styled.button`
+export const Button = styled.button`
   position: relative;
   cursor: pointer;
   color: #303030;
-  ${p => p.isSelected && 'color: #ffffff;'}
+  ${p => p.isOpened && 'color: #ffffff;'}
   font-family: "Avenir Next";
   font-size: 24px;
   font-weight: 700;
@@ -27,7 +27,7 @@ export const MainLink = styled.button`
   &:hover {
     color: #ffffff;
   }
-  ${p => p.isSelected && `
+  ${p => p.isOpened && `
     &:after {
       content: "\uf078";
       font-family: 'FontAwesome';
@@ -39,7 +39,7 @@ export const MainLink = styled.button`
   `}
 `;
 
-export const SubLink = styled(NavLink)`
+export const Link = styled(NavLink)`
   display: block;
   color: #303030;
   font-family: "Andale Mono";
