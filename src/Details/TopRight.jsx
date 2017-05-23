@@ -23,12 +23,13 @@ const Price = styled.h2`
   font-family: "Avenir Next";
   font-size: 80px;
   font-weight: 700;
+  ${p => p.color && `color:${p.color};`}
 `;
 
-export default () => (
+export default ({ color, setColor }) => (
   <Wrapper>
-    <Colors />
+    <Colors setColor={setColor} />
     <StyledLabel>Sale</StyledLabel>
-    <Price>170$</Price>
+    <Price color={color}>170$</Price>
   </Wrapper>
 );

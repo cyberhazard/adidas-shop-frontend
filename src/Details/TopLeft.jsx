@@ -25,12 +25,12 @@ const Save = styled.button`
   color: #ffffff;
   font-size: 18px;
   text-transform: uppercase;
+  ${p => p.color && `background-color: ${p.color};`}
 `;
 
-export default () => (
+export default ({ color }) => (
   <Wrapper>
     <Title>Ultra boost</Title>
-    <Save>Save</Save>
+    <Save color={color}>Save</Save>
   </Wrapper>
 );
-
