@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import media from './../media';
 
 const Wrapper = styled.p`
   font-family: "Avenir Next";
@@ -7,6 +8,7 @@ const Wrapper = styled.p`
   font-weight: 500;
   color: #d8d8d8;
   padding: 4px;
+  ${media.tablet`font-size:20px`}
 `;
 
 const Bold = styled.span`

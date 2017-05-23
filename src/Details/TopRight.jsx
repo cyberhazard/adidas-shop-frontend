@@ -2,11 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { Label } from './../List/Card/styled';
 import Colors from './Colors';
+import media from './../media';
 
 const Wrapper = styled.div`
   position: absolute;
   top: 30px;
   right: 30px;
+  ${media.tablet`
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  `}
 `;
 
 const StyledLabel = styled(Label)`
@@ -24,6 +33,11 @@ const Price = styled.h2`
   font-size: 80px;
   font-weight: 700;
   ${p => p.color && `color:${p.color};`}
+  ${media.tablet`
+    position: static;
+    order: -1;
+    width: 100%;
+  `}
 `;
 
 export default ({ color, setColor }) => (

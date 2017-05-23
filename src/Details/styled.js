@@ -15,4 +15,5 @@ export const ProductInfo = styled.div`
   overflow: auto;
   position: relative;
   padding: 50px 30px 0;
+  ${media.tablet`padding: 20px 15px 0;`}
 `;
