@@ -32,13 +32,13 @@ export const Button = styled.button`
       font-family: 'FontAwesome';
       font-size: 14px;
       position: absolute;
-      transform: rotate(-90deg);
+      transform: rotate(0);
       top: 8px;
       right: -22px;
     }
   ${p => p.isOpened && `
     &:after {
-      transform: rotate(0);
+      transform: rotate(180deg);
     }
   `}
 `;
