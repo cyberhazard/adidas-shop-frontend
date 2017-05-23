@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from './../media';
 
 export const Wrapper = styled.div`
   flex-grow: 2;
@@ -6,6 +7,7 @@ export const Wrapper = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  ${media.tablet`padding-top: 64px;`}
 `;
 
 export const ProductInfo = styled.div`
