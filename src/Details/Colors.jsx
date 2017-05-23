@@ -16,11 +16,10 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default () => (
+const colors = ['#C5C5C5', '#4C88CB', '#494949', '#E1E1E1'];
+
+export default ({ setColor }) => (
   <Wrapper>
-    <Button color="#C5C5C5" />
-    <Button color="#4C88CB" />
-    <Button color="#494949" />
-    <Button />
+    {colors.map(color => <Button onClick={() => setColor(color)} color={color} />)}
   </Wrapper>
 );
