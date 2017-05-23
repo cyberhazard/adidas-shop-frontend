@@ -20,8 +20,8 @@ const Image = styled.img`
 `;
 
 export default ({ img, isSelected, children, index, click }) => (
-  <Wrapper isSelected={isSelected} onClick={() => click && click(index)}>
-    { img && <Image src={img} /> }
+  <Wrapper isSelected={isSelected}>
+    { img && <Image src={img} onClick={() => click(index)} /> }
     { children }
   </Wrapper>
 );
