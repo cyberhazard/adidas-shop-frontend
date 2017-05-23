@@ -27,14 +27,18 @@ export const Button = styled.button`
   &:hover {
     color: #ffffff;
   }
-  ${p => p.isOpened && `
-    &:after {
+  &:after {
       content: "\uf078";
       font-family: 'FontAwesome';
       font-size: 14px;
       position: absolute;
-      top: 7px;
+      transform: rotate(0);
+      top: 8px;
       right: -22px;
+    }
+  ${p => p.isOpened && `
+    &:after {
+      transform: rotate(180deg);
     }
   `}
 `;
