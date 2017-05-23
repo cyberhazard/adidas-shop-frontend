@@ -19,8 +19,8 @@ const Image = styled.img`
   width: 100%;
 `;
 
-export default ({ img, isSelected, children, id, click }) => (
-  <Wrapper isSelected={isSelected} onClick={() => click && click(id)}>
+export default ({ img, isSelected, children, index, click }) => (
+  <Wrapper isSelected={isSelected} onClick={() => click && click(index)}>
     { img && <Image src={img} /> }
     { children }
   </Wrapper>

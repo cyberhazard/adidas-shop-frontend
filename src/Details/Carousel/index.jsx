@@ -40,26 +40,26 @@ const images = [
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedImages: images[0] };
+    this.state = { selectedIndex: 0 };
     this.changeImage = this.changeImage.bind(this);
   }
 
-  changeImage(id) {
-    this.setState({ selectedImages: images.find(el => el.id === id) });
+  changeImage(selectedIndex) {
+    this.setState({ selectedIndex });
   }
 
   render() {
     return (
       <div>
-        <BigImage src={this.state.selectedImages.x3} />
+        <BigImage src={images[this.state.selectedIndex].x3} />
         <Wrapper>
           {
-            images.map(image =>
+            images.map((image, index) =>
               (<Item
                 img={image.x1}
                 key={image.id}
-                id={image.id}
-                isSelected={this.state.selectedImages.id === image.id}
+                index={index}
+                isSelected={this.state.selectedIndex === index}
                 click={this.changeImage}
               />))
           }
