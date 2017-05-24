@@ -29,10 +29,10 @@ export default class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isOpened: false };
-    this.toggleHandler = this.toggleHandler.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
 
-  toggleHandler() {
+  toggle() {
     this.setState(prevState => ({ isOpened: !prevState.isOpened }));
   }
 
@@ -40,7 +40,7 @@ export default class Sidebar extends React.Component {
     return (
       <Wrapper isOpened={this.state.isOpened}>
         <Logo />
-        <Toggle onClick={this.toggleHandler} />
+        <Toggle onClick={this.toggle} />
         <Search />
         <Menu />
       </Wrapper>
