@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
-import ToggleMenu from './ToggleMenu';
+import Toggle from './Toggle';
 import Search from './Search';
 import Menu from './Menu';
 import media from './../media';
@@ -29,10 +29,10 @@ export default class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isOpened: false };
-    this.toggleMenuHandler = this.toggleMenuHandler.bind(this);
+    this.toggleHandler = this.toggleHandler.bind(this);
   }
 
-  toggleMenuHandler() {
+  toggleHandler() {
     this.setState(prevState => ({ isOpened: !prevState.isOpened }));
   }
 
@@ -40,7 +40,7 @@ export default class Sidebar extends React.Component {
     return (
       <Wrapper isOpened={this.state.isOpened}>
         <Logo />
-        <ToggleMenu onClick={this.toggleMenuHandler} />
+        <Toggle onClick={this.toggleHandler} />
         <Search />
         <Menu />
       </Wrapper>
