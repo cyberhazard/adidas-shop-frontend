@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import media from './../media';
 
 const Button = styled.button`
   width: 100%;
@@ -12,6 +13,11 @@ const Button = styled.button`
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
+  ${media.tablet`
+    padding: 22px 0;
+    font-size: 20px;
+    flex-shrink: 0;
+  `}
 `;
 
 export default () => (

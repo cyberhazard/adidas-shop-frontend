@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import media from './../media';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -9,11 +10,16 @@ const Wrapper = styled.div`
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Avenir Next";
+  ${media.tablet`
+    position: static;
+    width: 100%;
+  `}
 `;
 
 const Title = styled.h1`
   color: #3a3a3a;
   font-size: 64px;
+  ${media.tablet`font-size: 36px;`}
 `;
 
 const Save = styled.button`
@@ -26,6 +32,7 @@ const Save = styled.button`
   font-size: 18px;
   text-transform: uppercase;
   ${p => p.color && `background-color: ${p.color};`}
+  ${media.tablet`display:none;`}
 `;
 
 export default ({ color }) => (

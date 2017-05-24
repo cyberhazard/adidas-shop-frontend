@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Filter from './Filter';
 import Card from './Card';
+import media from './../media';
 
 export const CustomCol = styled(Col)`
   margin: 6px 0;
@@ -12,6 +13,7 @@ const Wrapper = styled.div`
   height: 100vh;
   overflow: auto;
   flex-grow: 2;
+  ${media.tablet`padding-top: 64px;`}
 `;
 
 const CutomGrid = styled(Grid)`

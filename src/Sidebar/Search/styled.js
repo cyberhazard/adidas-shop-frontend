@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import media from './../../media';
 
 export const Wrapper = styled.div`
   position: relative;
   padding: 40px 22px 0;
   margin-bottom: 100px;
+  ${media.tablet`margin-bottom:0;`}
 `;
 
 export const Input = styled.input`

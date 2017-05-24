@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Item from './Item';
+import media from './../../media';
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,6 +13,7 @@ const BigImage = styled.img`
   max-width: 70%;
   max-height: 500px;
   margin: 0 auto;
+  ${media.tablet`max-width: 90%;`}
 `;
 
 const generateId = () => `${Date.now()}-${Math.round(Math.random() * 10000000)}`;
@@ -63,7 +65,6 @@ export default class Carousel extends React.Component {
                 click={this.changeImage}
               />))
           }
-          <Item>See more photos</Item>
         </Wrapper>
       </div>
     );

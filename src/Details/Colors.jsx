@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import media from './../media';
 
 const Wrapper = styled.div`
   display: inline-flex;
   margin-right: 20px;
+  ${media.tablet` margin-right: 0;`}
 `;
 
 const Button = styled.button`
