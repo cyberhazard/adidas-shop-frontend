@@ -12,4 +12,4 @@ const Img = styled.img`
   `}
 `;
 
-export default ({ click }) => <Img onClick={click} src={require('./toggle-menu.png')} />;
+export default ({ onClick }) => <Img onClick={onClick} src={require('./toggle-menu.png')} />;

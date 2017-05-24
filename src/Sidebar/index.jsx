@@ -40,7 +40,7 @@ export default class Sidebar extends React.Component {
     return (
       <Wrapper isOpened={this.state.isOpened}>
         <Logo />
-        <ToggleMenu click={this.toggleMenuHandler} />
+        <ToggleMenu onClick={this.toggleMenuHandler} />
         <Search />
         <Menu />
       </Wrapper>
