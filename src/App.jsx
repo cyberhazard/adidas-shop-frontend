@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 export default () => (
   <Wrapper>
     <Sidebar />
-    <Route path="/products/:group/:type" component={List} />
-    <Route path="/details" component={Details} />
+    <Route exact path="/products/:group/:type" component={List} />
+    <Route path="/products/:group/:type/:id" component={Details} />
   </Wrapper>
 );
