@@ -24,7 +24,7 @@ const generateId = () => `${Date.now()}-${Math.round(Math.random() * 10000000)}`
 const generateNumber = (min, max) => Math.floor((Math.random() * ((max - min) + 1)) + min);
 
 const products = new Array(300).fill(0).map(() => ({
-  key: generateId(),
+  id: generateId(),
   price: `$ ${generateNumber(100, 300)}`,
   sale: !Math.round(Math.random()),
   img: [
@@ -34,15 +34,20 @@ const products = new Array(300).fill(0).map(() => ({
   ][generateNumber(0, 2)],
 }));
 
-export default () => (
+export default ({ match }) => (
   <Wrapper>
     <Filter />
     <CutomGrid fluid>
       <Row>
         {
           products.map(product => (
-            <CustomCol xs={12} sm={6} md={4} lg={3} key={product.key}>
-              <Card {...product} />
+            <CustomCol xs={12} sm={6} md={4} lg={3} key={product.id}>
+              <Card
+                to={`${match.url}/${product.id}`}
+                img={product.img}
+                price={product.price}
+                sale={product.sale}
+              />
             </CustomCol>
           ))
         }
