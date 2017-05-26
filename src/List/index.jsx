@@ -34,7 +34,7 @@ const products = new Array(300).fill(0).map(() => ({
   ][generateNumber(0, 2)],
 }));
 
-export default ({ match: { url } }) => (
+export default ({ match }) => (
   <Wrapper>
     <Filter />
     <CutomGrid fluid>
@@ -42,7 +42,7 @@ export default ({ match: { url } }) => (
         {
           products.map(product => (
             <CustomCol xs={12} sm={6} md={4} lg={3} key={product.key}>
-              <Card id={product.key} url={url} {...product} />
+              <Card id={product.key} url={match.url} {...product} />
             </CustomCol>
           ))
         }
