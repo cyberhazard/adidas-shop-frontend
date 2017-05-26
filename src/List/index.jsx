@@ -42,7 +42,13 @@ export default ({ match }) => (
         {
           products.map(product => (
             <CustomCol xs={12} sm={6} md={4} lg={3} key={product.key}>
-              <Card id={product.key} url={match.url} {...product} />
+              <Card
+                url={match.url}
+                id={product.key}
+                img={product.img}
+                price={product.price}
+                sale={product.sale}
+              />
             </CustomCol>
           ))
         }
