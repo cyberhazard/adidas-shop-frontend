@@ -24,7 +24,7 @@ const generateId = () => `${Date.now()}-${Math.round(Math.random() * 10000000)}`
 const generateNumber = (min, max) => Math.floor((Math.random() * ((max - min) + 1)) + min);
 
 const products = new Array(300).fill(0).map(() => ({
-  key: generateId(),
+  id: generateId(),
   price: `$ ${generateNumber(100, 300)}`,
   sale: !Math.round(Math.random()),
   img: [
@@ -41,10 +41,10 @@ export default ({ match }) => (
       <Row>
         {
           products.map(product => (
-            <CustomCol xs={12} sm={6} md={4} lg={3} key={product.key}>
+            <CustomCol xs={12} sm={6} md={4} lg={3} key={product.id}>
               <Card
                 url={match.url}
-                id={product.key}
+                id={product.id}
                 img={product.img}
                 price={product.price}
                 sale={product.sale}
