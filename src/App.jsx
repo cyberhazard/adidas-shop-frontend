@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 export default () => (
   <Wrapper>
     <Sidebar />
-    <Route exact path="/" render={() => <Redirect to="/products/football/cleats" />} />
+    <Redirect from="/" to="/products/football/cleats" />
     <Route exact path="/products/:group/:type" component={List} />
     <Route path="/products/:group/:type/:id" component={Details} />
   </Wrapper>
