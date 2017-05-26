@@ -44,7 +44,6 @@ export default ({ match }) => (
             <CustomCol xs={12} sm={6} md={4} lg={3} key={product.id}>
               <Card
                 url={`${match.url}/${product.id}`}
-                id={product.id}
                 img={product.img}
                 price={product.price}
                 sale={product.sale}
