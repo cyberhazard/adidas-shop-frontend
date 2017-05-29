@@ -20,38 +20,59 @@ const CutomGrid = styled(Grid)`
   padding: 0 1.4rem !important;
 `;
 
-const generateId = () => `${Date.now()}-${Math.round(Math.random() * 10000000)}`;
-const generateNumber = (min, max) => Math.floor((Math.random() * ((max - min) + 1)) + min);
+const makeImageLink = (id, fileName, height) =>
+  `http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/${id}/zoom/${fileName}?sh=${height}`;
 
-const products = new Array(300).fill(0).map(() => ({
-  id: generateId(),
-  price: `$ ${generateNumber(100, 300)}`,
-  sale: !Math.round(Math.random()),
-  img: [
-    require('./../assets/images/prod-1.png'),
-    require('./../assets/images/prod-2.png'),
-    require('./../assets/images/prod-3.png'),
-  ][generateNumber(0, 2)],
-}));
+export default class List extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { products: '' };
+    this.fetchData = this.fetchData.bind(this);
+  }
 
-export default ({ match }) => (
-  <Wrapper>
-    <Filter />
-    <CutomGrid fluid>
-      <Row>
-        {
-          products.map(product => (
-            <CustomCol xs={12} sm={6} md={4} lg={3} key={product.id}>
-              <Card
-                to={`${match.url}/${product.id}`}
-                img={product.img}
-                price={product.price}
-                sale={product.sale}
-              />
-            </CustomCol>
-          ))
-        }
-      </Row>
-    </CutomGrid>
-  </Wrapper>
-);
+  componentDidMount() {
+    this.fetchData(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.fetchData(nextProps);
+  }
+
+  fetchData(props) {
+    const { group, type } = props.match.params;
+    const FETCH_URL = `http://localhost:3001/v1/products/${group}/${type}`;
+    fetch(FETCH_URL)
+      .then(resp => resp.json())
+      .then(({ items }) => {
+        this.setState({ products: items });
+      });
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <Filter />
+        <CutomGrid fluid>
+          <Row>
+            {
+              this.state.products &&
+              this.state.products.map((product) => {
+                const { id, fileName } = product.images[product.images.length - 1];
+                return (
+                  <CustomCol xs={12} sm={6} md={4} lg={3} key={product.id}>
+                    <Card
+                      to={`${this.props.match.url}/${product.id}`}
+                      img={makeImageLink(id, fileName, 256)}
+                      price={product.price}
+                      sale={product.sale}
+                    />
+                  </CustomCol>
+                );
+              })
+            }
+          </Row>
+        </CutomGrid>
+      </Wrapper>
+    );
+  }
+}
