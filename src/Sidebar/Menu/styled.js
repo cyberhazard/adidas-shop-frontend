@@ -16,7 +16,7 @@ export const Button = styled.button`
   position: relative;
   cursor: pointer;
   color: #303030;
-  ${p => p.isOpened && 'color: #ffffff;'}
+  ${p => p.isOpen && 'color: #ffffff;'}
   font-family: "Avenir Next";
   font-size: 24px;
   font-weight: 700;
@@ -36,7 +36,7 @@ export const Button = styled.button`
       top: 8px;
       right: -22px;
     }
-  ${p => p.isOpened && `
+  ${p => p.isOpen && `
     &:after {
       transform: rotate(180deg);
     }

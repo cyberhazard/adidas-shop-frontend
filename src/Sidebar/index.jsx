@@ -21,24 +21,24 @@ const Wrapper = styled.div`
     height: 64px;
     max-height: 100vh;
     z-index: 2;
-    ${p => p.isOpened && 'height: auto;'}
+    ${p => p.isOpen && 'height: auto;'}
   `}
 `;
 
 export default class Sidebar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isOpened: false };
+    this.state = { isOpen: false };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
-    this.setState(prevState => ({ isOpened: !prevState.isOpened }));
+    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
 
   render() {
     return (
-      <Wrapper isOpened={this.state.isOpened}>
+      <Wrapper isOpen={this.state.isOpen}>
         <Logo />
         <Toggle onClick={this.toggle} />
         <Search />

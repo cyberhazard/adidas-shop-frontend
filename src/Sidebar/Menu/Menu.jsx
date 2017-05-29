@@ -4,12 +4,12 @@ import { Button, Item } from './styled';
 export default class Menu extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isOpened: false };
+    this.state = { isOpen: false };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState(prevState => ({ isOpened: !prevState.isOpened }));
+    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
 
   render() {
@@ -17,9 +17,9 @@ export default class Menu extends React.Component {
       <Item>
         <Button
           onClick={this.handleClick}
-          isOpened={this.state.isOpened}
+          isOpen={this.state.isOpen}
         >{this.props.title}</Button>
-        {this.state.isOpened && this.props.children}
+        {this.state.isOpen && this.props.children}
       </Item>
     );
   }
