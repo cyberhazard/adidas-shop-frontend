@@ -57,7 +57,7 @@ export default class List extends React.Component {
             {
               this.state.products &&
               this.state.products.map((product) => {
-                const { id, fileName } = product.images[product.images.length - 1];
+                const { id, fileName } = product.images[0];
                 return (
                   <CustomCol xs={12} sm={6} md={4} lg={3} key={product.id}>
                     <Card
