@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Sidebar from './Sidebar';
 import List from './List';
@@ -14,8 +14,10 @@ const Wrapper = styled.div`
 export default () => (
   <Wrapper>
     <Sidebar />
-    <Redirect from="/" to="/products/football/cleats" />
-    <Route exact path="/products/:group/:type" component={List} />
-    <Route path="/products/:group/:type/:id" component={Details} />
+    <Switch>
+      <Route exact path="/products/:group/:type" component={List} />
+      <Route path="/products/:group/:type/:id" component={Details} />
+      <Redirect from="/" to="/products/football/cleats" />
+    </Switch>
   </Wrapper>
 );
