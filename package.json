@@ -25,5 +25,9 @@
     "eject": "react-scripts eject",
     "lint": "$(npm bin)/eslint src --ext=js,jsx",
     "prepush": "npm run lint"
+  },
+  "now": {
+    "name": "build",
+    "alias": "adidas-shop-cyberhazard"
   }
 }
