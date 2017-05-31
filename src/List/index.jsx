@@ -26,7 +26,7 @@ const makeImageLink = (id, fileName, height) =>
 export default class List extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { products: '' };
+    this.state = { products: [] };
     this.fetchData = this.fetchData.bind(this);
   }
 
@@ -55,7 +55,6 @@ export default class List extends React.Component {
         <CutomGrid fluid>
           <Row>
             {
-              this.state.products &&
               this.state.products.map((product) => {
                 const { id, fileName } = product.images[0];
                 return (
