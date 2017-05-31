@@ -27,18 +27,18 @@ export default class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = { products: [] };
-    this.fetchData = this.fetchData.bind(this);
+    this.load = this.load.bind(this);
   }
 
   componentDidMount() {
-    this.fetchData(this.props);
+    this.load(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.fetchData(nextProps);
+    this.load(nextProps);
   }
 
-  fetchData(props) {
+  load(props) {
     const { group, type } = props.match.params;
     const FETCH_URL = `http://localhost:3001/v1/products/${group}/${type}`;
     fetch(FETCH_URL)
