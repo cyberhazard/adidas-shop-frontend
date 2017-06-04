@@ -36,7 +36,7 @@ export default class List extends React.Component {
 
   load(props) {
     const { group, type } = props.match.params;
-    const FETCH_URL = `http://localhost:3001/v1/products/${group}/${type}`;
+    const FETCH_URL = `https://erodionov-adidas-fake-api.now.sh/v1/products/${group}/${type}`;
     fetch(FETCH_URL)
       .then(resp => resp.json())
       .then(({ items }) => {
