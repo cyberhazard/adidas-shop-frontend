@@ -8,6 +8,12 @@ export default class Filter extends React.Component {
     this.selectSize = this.selectSize.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (JSON.stringify(this.props.sizes) !== JSON.stringify(nextProps.sizes)) {
+      this.setState({ selectedIndex: 0 });
+    }
+  }
+
   selectSize(size, selectedIndex) {
     this.props.onClick(size);
     this.setState({ selectedIndex });
