@@ -6,6 +6,10 @@
   outline: none;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   overflow: hidden;
 }
