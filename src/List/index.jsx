@@ -33,6 +33,7 @@ export default class List extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.load(nextProps);
+    this.wrapper.scrollTop = 0;
   }
 
   load(props) {
@@ -56,7 +57,7 @@ export default class List extends React.Component {
       .reduce((allSizes, obj) => (allSizes.push(...obj.sizes), allSizes), []),
     ));
     return (
-      <Wrapper>
+      <Wrapper innerRef={(wrapper) => { this.wrapper = wrapper; }}>
         <Filter
           sizes={sizes}
           onClick={this.selectSize}
