@@ -16,10 +16,6 @@ const Wrapper = styled.div`
   ${media.tablet`padding-top: 64px;`}
 `;
 
-const CutomGrid = styled(Grid)`
-  padding: 0 1.4rem !important;
-`;
-
 const makeImageLink = (id, fileName, height) =>
   `http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/${id}/zoom/${fileName}?sh=${height}`;
 
@@ -52,7 +48,7 @@ export default class List extends React.Component {
     return (
       <Wrapper>
         <Filter />
-        <CutomGrid fluid>
+        <Grid fluid>
           <Row>
             {
               this.state.products.map((product) => {
@@ -70,7 +66,7 @@ export default class List extends React.Component {
               })
             }
           </Row>
-        </CutomGrid>
+        </Grid>
       </Wrapper>
     );
   }
