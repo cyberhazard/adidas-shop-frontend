@@ -22,8 +22,9 @@ const Col = ({ children }) => <StyledCol xs={12} sm={6} md={4} lg={3}>{children}
 export default class List extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { products: [] };
+    this.state = { products: [], filtered: [] };
     this.load = this.load.bind(this);
+    this.selectSize = this.selectSize.bind(this);
   }
 
   componentDidMount() {
@@ -39,17 +40,31 @@ export default class List extends React.Component {
     const FETCH_URL = `https://erodionov-adidas-fake-api.now.sh/v1/products/${group}/${type}`;
     fetch(FETCH_URL)
       .then(r => r.json())
-      .then(({ items }) => this.setState({ products: items }));
+      .then(({ items }) => this.setState({ products: items, filtered: items }));
+  }
+
+  selectSize(selectedSize) {
+    const filtered = selectedSize === 'All'
+      ? this.state.products
+      : this.state.products.filter(product => product.sizes.includes(selectedSize));
+    this.setState({ filtered });
   }
 
   render() {
+    const sizes = Array.from(new Set(this.state.products
+      // eslint-disable-next-line
+      .reduce((allSizes, obj) => (allSizes.push(...obj.sizes), allSizes), []),
+    ));
     return (
       <Wrapper>
-        <Filter />
+        <Filter
+          sizes={sizes}
+          onClick={this.selectSize}
+        />
         <Grid fluid>
           <Row>
             {
-              this.state.products.map((product) => {
+              this.state.filtered.map((product) => {
                 const { id, fileName } = product.images[0];
                 return (
                   <Col key={product.id}>
