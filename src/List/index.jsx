@@ -4,6 +4,7 @@ import { Grid, Row, Col as OriginalCol } from 'react-flexbox-grid';
 import Filter from './Filter';
 import Card from './Card';
 import media from './../media';
+import { makeImageLink } from './../helpers';
 
 export const StyledCol = styled(OriginalCol)`
   margin: 6px 0;
@@ -17,9 +18,6 @@ const Wrapper = styled.div`
 `;
 
 const Col = ({ children }) => <StyledCol xs={12} sm={6} md={4} lg={3}>{children}</StyledCol>;
-
-const makeImageLink = (id, fileName, height) =>
-  `http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/${id}/zoom/${fileName}?sh=${height}`;
 
 export default class List extends React.Component {
   constructor(props) {
