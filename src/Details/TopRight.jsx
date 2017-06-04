@@ -15,6 +15,7 @@ const Wrapper = styled.div`
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
   `}
 `;
 
