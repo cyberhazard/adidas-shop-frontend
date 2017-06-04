@@ -17,6 +17,7 @@ export const Image = styled.img`
 
 export const Sizes = styled.div`
   padding-left: 52px;
+  ${media.tablet`padding-left: 0;`}
 `;
 
 export const Button = styled.button`
