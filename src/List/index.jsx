@@ -38,10 +38,8 @@ export default class List extends React.Component {
     const { group, type } = props.match.params;
     const FETCH_URL = `https://erodionov-adidas-fake-api.now.sh/v1/products/${group}/${type}`;
     fetch(FETCH_URL)
-      .then(resp => resp.json())
-      .then(({ items }) => {
-        this.setState({ products: items });
-      });
+      .then(r => r.json())
+      .then(({ items }) => this.setState({ products: items }));
   }
 
   render() {
