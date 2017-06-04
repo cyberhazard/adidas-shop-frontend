@@ -4,7 +4,7 @@ import media from './../../media';
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 12px 22px;
+  padding: 12px 20px;
   ${media.tablet`flex-wrap: wrap;`}
 `;
 
@@ -13,6 +13,11 @@ export const Image = styled.img`
   height: 55px;
   margin-right: 30px;
   ${media.giant` display: none;`}
+`;
+
+export const Sizes = styled.div`
+  padding-left: 52px;
+  ${media.tablet`padding-left: 0;`}
 `;
 
 export const Button = styled.button`
@@ -39,6 +44,6 @@ export const Label = styled.span`
   font-weight: 700;
   text-transform: uppercase;
   color: #4d42f8;
-  margin: 0 20px 0 52px;
+  margin: 0 20px 0 0;
   ${media.tablet`margin-left: 0;`}
 `;

@@ -15,6 +15,7 @@ const Wrapper = styled.div`
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
   `}
 `;
 
@@ -40,10 +41,10 @@ const Price = styled.h2`
   `}
 `;
 
-export default ({ color, setColor }) => (
+export default ({ color, setColor, price }) => (
   <Wrapper>
     <Colors setColor={setColor} />
     <StyledLabel>Sale</StyledLabel>
-    <Price color={color}>170$</Price>
+    <Price color={color}>{price / 100}$</Price>
   </Wrapper>
 );

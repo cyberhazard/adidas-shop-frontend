@@ -6,7 +6,7 @@ export default ({ img, price, sale, to }) => (
     <Cover>
       <Image src={img} alt="" />
     </Cover>
-    <StyledLink to={to} sale={sale}>{price}</StyledLink>
+    <StyledLink to={to} sale={sale}>{price / 100 } $</StyledLink>
     {
       sale && <Label>Sale</Label>
     }
