@@ -15,6 +15,10 @@ export const Image = styled.img`
   ${media.giant` display: none;`}
 `;
 
+export const Sizes = styled.div`
+  padding-left: 52px;
+`;
+
 export const Button = styled.button`
   font-family: "Avenir Next";
   font-size: 24px;
@@ -39,6 +43,6 @@ export const Label = styled.span`
   font-weight: 700;
   text-transform: uppercase;
   color: #4d42f8;
-  margin: 0 20px 0 52px;
+  margin: 0 20px 0 0;
   ${media.tablet`margin-left: 0;`}
 `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper, Image, Button, Label } from './styled';
+import { Wrapper, Image, Button, Label, Sizes } from './styled';
 
 export default () => (
   <Wrapper>
@@ -8,7 +8,7 @@ export default () => (
       <Button isSelected>Man</Button>
       <Button>Woman</Button>
     </div>
-    <div>
+    <Sizes>
       <Label>Size</Label>
       <Button mini>36</Button>
       <Button mini>37</Button>
@@ -17,6 +17,6 @@ export default () => (
       <Button mini>40</Button>
       <Button mini isSelected>41</Button>
       <Button mini>42</Button>
-    </div>
+    </Sizes>
   </Wrapper>
 );
