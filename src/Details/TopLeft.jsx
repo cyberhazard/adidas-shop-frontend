@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   position: absolute;
   top: 30px;
   left:30px;
-  width: 200px;
+  width: 400px;
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Avenir Next";
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   color: #3a3a3a;
   font-size: 64px;
-  ${media.tablet`font-size: 36px;`}
+  ${media.giant`font-size: 36px;`}
 `;
 
 const Save = styled.button`
@@ -35,9 +35,9 @@ const Save = styled.button`
   ${media.tablet`display:none;`}
 `;
 
-export default ({ color }) => (
+export default ({ color, title }) => (
   <Wrapper>
-    <Title>Ultra boost</Title>
+    <Title>{title}</Title>
     <Save color={color}>Save</Save>
   </Wrapper>
 );
