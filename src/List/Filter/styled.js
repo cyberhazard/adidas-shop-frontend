@@ -4,7 +4,7 @@ import media from './../../media';
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 12px 22px;
+  padding: 12px 20px;
   ${media.tablet`flex-wrap: wrap;`}
 `;
 
