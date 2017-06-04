@@ -35,9 +35,9 @@ const Save = styled.button`
   ${media.tablet`display:none;`}
 `;
 
-export default ({ color }) => (
+export default ({ color, title }) => (
   <Wrapper>
-    <Title>Ultra boost</Title>
+    <Title>{title}</Title>
     <Save color={color}>Save</Save>
   </Wrapper>
 );
