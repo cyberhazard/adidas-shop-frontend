@@ -50,8 +50,7 @@ export default class List extends React.Component {
 
   render() {
     const sizes = Array.from(new Set(this.state.products
-      // eslint-disable-next-line
-      .reduce((allSizes, obj) => (allSizes.push(...obj.sizes), allSizes), []),
+      .reduce((allSizes, obj) => [...allSizes, ...obj.sizes], []),
     ));
     const filtered = this.state.filter
       ? this.state.products.filter(obj => obj.sizes.includes(this.state.filter))
