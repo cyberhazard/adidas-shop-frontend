@@ -7,10 +7,6 @@ import media from './../media';
 import { makeImageLink } from './../helpers';
 import { get } from './../api';
 
-export const StyledCol = styled(OriginalCol)`
-  margin: 6px 0;
-`;
-
 const Wrapper = styled.div`
   height: 100vh;
   overflow: auto;
@@ -18,7 +14,7 @@ const Wrapper = styled.div`
   ${media.tablet`padding-top: 64px;`}
 `;
 
-const Col = ({ children }) => <StyledCol xs={12} sm={6} md={4} lg={3}>{children}</StyledCol>;
+const Col = ({ children }) => <OriginalCol xs={12} sm={6} md={4} lg={3}>{children}</OriginalCol>;
 
 export default class List extends React.Component {
   constructor(props) {
