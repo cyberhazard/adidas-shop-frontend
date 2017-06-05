@@ -73,7 +73,7 @@ export default class List extends React.Component {
                       to={`${this.props.match.url}/${product.id}`}
                       img={makeImageLink(id, fileName, 256)}
                       price={product.price}
-                      sale={product.sale}
+                      currency={product.currency}
                     />
                   </Col>
                 );
