@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper, Image, Button, Label, Sizes } from './styled';
+import { Wrapper, Button, Label } from './styled';
 
 export default class Filter extends React.Component {
   constructor(props) {
@@ -27,22 +27,15 @@ export default class Filter extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Image src={require('./filter.png')} />
-        <div>
-          <Button isSelected>Man</Button>
-          <Button>Woman</Button>
-        </div>
-        <Sizes>
-          <Label>Size</Label>
-          {
-            this.props.sizes.map(size =>
-              (<Button
-                mini
-                isSelected={size === this.state.selectedSize}
-                onClick={() => this.selectSize(size)}
-              >{ size }</Button>))
-          }
-        </Sizes>
+        <Label>Size</Label>
+        {
+          this.props.sizes.map(size =>
+            (<Button
+              mini
+              isSelected={size === this.state.selectedSize}
+              onClick={() => this.selectSize(size)}
+            >{ size }</Button>))
+        }
       </Wrapper>
     );
   }

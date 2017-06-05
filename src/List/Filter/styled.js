@@ -8,18 +8,6 @@ export const Wrapper = styled.div`
   ${media.tablet`flex-wrap: wrap;`}
 `;
 
-export const Image = styled.img`
-  width: 55px;
-  height: 55px;
-  margin-right: 30px;
-  ${media.giant` display: none;`}
-`;
-
-export const Sizes = styled.div`
-  padding-left: 52px;
-  ${media.tablet`padding-left: 0;`}
-`;
-
 export const Button = styled.button`
   font-family: "Avenir Next";
   font-size: 24px;
