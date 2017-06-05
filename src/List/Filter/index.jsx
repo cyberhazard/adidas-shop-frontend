@@ -5,7 +5,7 @@ export default class Filter extends React.Component {
   constructor(props) {
     super(props);
     this.state = { selectedSize: null };
-    this.selectSize = this.selectSize.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -14,7 +14,7 @@ export default class Filter extends React.Component {
     }
   }
 
-  selectSize(size) {
+  handleFilterChange(size) {
     if (size === this.state.selectedSize) {
       this.props.onClick();
       this.setState({ selectedSize: null });
@@ -33,7 +33,7 @@ export default class Filter extends React.Component {
             (<Button
               mini
               isSelected={size === this.state.selectedSize}
-              onClick={() => this.selectSize(size)}
+              onClick={() => this.handleFilterChange(size)}
             >{ size }</Button>))
         }
       </Wrapper>

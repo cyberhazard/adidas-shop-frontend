@@ -25,7 +25,7 @@ export default class List extends React.Component {
     super(props);
     this.state = { products: [], filter: null };
     this.load = this.load.bind(this);
-    this.setFilter = this.setFilter.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +37,7 @@ export default class List extends React.Component {
     this.wrapper.scrollTop = 0;
   }
 
-  setFilter(filter = '') {
+  handleFilterChange(filter = '') {
     this.setState({ filter });
   }
 
@@ -58,7 +58,7 @@ export default class List extends React.Component {
       <Wrapper innerRef={(wrapper) => { this.wrapper = wrapper; }}>
         <Filter
           sizes={sizes}
-          onClick={this.setFilter}
+          onClick={this.handleFilterChange}
         />
         <Grid fluid>
           <Row>
