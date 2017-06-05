@@ -22,9 +22,9 @@ const Col = ({ children }) => <StyledCol xs={12} sm={6} md={4} lg={3}>{children}
 export default class List extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { products: [], filtered: [] };
+    this.state = { products: [], filter: '' };
     this.load = this.load.bind(this);
-    this.selectSize = this.selectSize.bind(this);
+    this.setFilter = this.setFilter.bind(this);
   }
 
   componentDidMount() {
@@ -36,19 +36,16 @@ export default class List extends React.Component {
     this.wrapper.scrollTop = 0;
   }
 
+  setFilter(filter = '') {
+    this.setState({ filter });
+  }
+
   load(props) {
     const { group, type } = props.match.params;
     const FETCH_URL = `https://erodionov-adidas-fake-api.now.sh/v1/products/${group}/${type}`;
     fetch(FETCH_URL)
       .then(r => r.json())
-      .then(({ items }) => this.setState({ products: items, filtered: items }));
-  }
-
-  selectSize(selectedSize) {
-    const filtered = selectedSize === 'All'
-      ? this.state.products
-      : this.state.products.filter(product => product.sizes.includes(selectedSize));
-    this.setState({ filtered });
+      .then(({ items }) => this.setState({ products: items, filter: '' }));
   }
 
   render() {
@@ -56,16 +53,19 @@ export default class List extends React.Component {
       // eslint-disable-next-line
       .reduce((allSizes, obj) => (allSizes.push(...obj.sizes), allSizes), []),
     ));
+    const filtered = this.state.filter
+      ? this.state.products.filter(obj => obj.sizes.includes(this.state.filter))
+      : this.state.products;
     return (
       <Wrapper innerRef={(wrapper) => { this.wrapper = wrapper; }}>
         <Filter
           sizes={sizes}
-          onClick={this.selectSize}
+          onClick={this.setFilter}
         />
         <Grid fluid>
           <Row>
             {
-              this.state.filtered.map((product) => {
+              filtered.map((product) => {
                 const { id, fileName } = product.images[0];
                 return (
                   <Col key={product.id}>
