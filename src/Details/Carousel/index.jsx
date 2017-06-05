@@ -29,16 +29,15 @@ export default class Carousel extends React.Component {
   }
 
   render() {
-    const { id, fileName } = this.props.images
-      ? this.props.images[this.state.selectedIndex]
-      : { id: 0, fileName: '' };
+    if (!this.props.images) return <div>Loading images</div>;
+    const { id, fileName } = this.props.images[this.state.selectedIndex];
     const bigImage = makeImageLink(id, fileName, 800);
     return (
       <div>
         <BigImage src={bigImage} />
         <Wrapper>
           {
-            this.props.images && this.props.images.map((image, index) =>
+            this.props.images.map((image, index) =>
               (<Item
                 img={makeImageLink(image.id, image.fileName, 240)}
                 key={image.id}
