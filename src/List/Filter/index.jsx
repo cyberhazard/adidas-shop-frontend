@@ -4,20 +4,20 @@ import { Wrapper, Button, Label } from './styled';
 export default class Filter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedSize: '' };
+    this.state = { selectedSize: null };
     this.selectSize = this.selectSize.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (JSON.stringify(this.props.sizes) !== JSON.stringify(nextProps.sizes)) {
-      this.setState({ selectedSize: '' });
+      this.setState({ selectedSize: null });
     }
   }
 
   selectSize(size) {
     if (size === this.state.selectedSize) {
       this.props.onClick();
-      this.setState({ selectedSize: '' });
+      this.setState({ selectedSize: null });
     } else {
       this.props.onClick(size);
       this.setState({ selectedSize: size });

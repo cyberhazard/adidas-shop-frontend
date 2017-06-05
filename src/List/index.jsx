@@ -23,7 +23,7 @@ const Col = ({ children }) => <StyledCol xs={12} sm={6} md={4} lg={3}>{children}
 export default class List extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { products: [], filter: '' };
+    this.state = { products: [], filter: null };
     this.load = this.load.bind(this);
     this.setFilter = this.setFilter.bind(this);
   }
@@ -44,7 +44,7 @@ export default class List extends React.Component {
   load(props) {
     const { group, type } = props.match.params;
     get(group, type)
-      .then(({ items }) => this.setState({ products: items, filter: '' }));
+      .then(({ items }) => this.setState({ products: items, filter: null }));
   }
 
   render() {
