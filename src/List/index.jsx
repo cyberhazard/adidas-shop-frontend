@@ -5,6 +5,7 @@ import Filter from './Filter';
 import Card from './Card';
 import media from './../media';
 import { makeImageLink } from './../helpers';
+import { get } from './../api';
 
 export const StyledCol = styled(OriginalCol)`
   margin: 6px 0;
@@ -42,9 +43,7 @@ export default class List extends React.Component {
 
   load(props) {
     const { group, type } = props.match.params;
-    const FETCH_URL = `https://erodionov-adidas-fake-api.now.sh/v1/products/${group}/${type}`;
-    fetch(FETCH_URL)
-      .then(r => r.json())
+    get(group, type)
       .then(({ items }) => this.setState({ products: items, filter: '' }));
   }
 
