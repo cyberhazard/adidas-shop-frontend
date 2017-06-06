@@ -33,7 +33,7 @@ export default class List extends React.Component {
     this.wrapper.scrollTop = 0;
   }
 
-  handleFilterChange(filter = '') {
+  handleFilterChange(filter) {
     this.setState({ filter });
   }
 
