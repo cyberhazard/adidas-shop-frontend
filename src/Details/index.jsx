@@ -25,7 +25,7 @@ export default class Details extends React.Component {
 
   load(props) {
     const { group, type, id } = props.match.params;
-    get(group, type, id)
+    get(`v1/products/${group}/${type}/${id}`)
       .then(item => this.setState({ item }));
   }
 
