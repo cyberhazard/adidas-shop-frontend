@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wrapper, Cover, Image, StyledLink, Label } from './styled';
-import Price from './Price';
+import Price from './../../Price';
 
 export default ({ img, price, sale, to, currency }) => (
   <Wrapper>
