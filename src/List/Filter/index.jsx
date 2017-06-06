@@ -15,9 +15,9 @@ export default class Filter extends React.Component {
   }
 
   handleFilterChange(size) {
-    const filter = size === this.state.selectedSize ? null : size;
-    this.props.onClick(filter);
-    this.setState({ selectedSize: filter });
+    const selectedSize = size === this.state.selectedSize ? null : size;
+    this.props.onClick(selectedSize);
+    this.setState({ selectedSize });
   }
 
   render() {
