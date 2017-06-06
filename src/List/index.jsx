@@ -39,7 +39,7 @@ export default class List extends React.Component {
 
   load(props) {
     const { group, type } = props.match.params;
-    get(group, type)
+    get(`v1/products/${group}/${type}`)
       .then(({ items }) => this.setState({ products: items, filter: null }));
   }
 

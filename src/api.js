@@ -1,5 +1,5 @@
-export const get = (group, type, id = '') =>
-  fetch(`https://erodionov-adidas-fake-api.now.sh/v1/products/${group}/${type}/${id}`)
+export const get = path =>
+  fetch(`https://erodionov-adidas-fake-api.now.sh/${path}`)
     .then(r => r.json());
 
 export const post = (url, data) =>
