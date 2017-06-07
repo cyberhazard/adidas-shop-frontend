@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Item from './Item';
 import media from './../../media';
+import { makeImageLink } from './../../helpers';
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,29 +17,6 @@ const BigImage = styled.img`
   ${media.tablet`max-width: 90%;`}
 `;
 
-const generateId = () => `${Date.now()}-${Math.round(Math.random() * 10000000)}`;
-
-const images = [
-  {
-    id: generateId(),
-    x1: require('./../../assets/images/img-1.png'),
-    x2: require('./../../assets/images/img-1@2x.png'),
-    x3: require('./../../assets/images/img-1@3x.png'),
-  },
-  {
-    id: generateId(),
-    x1: require('./../../assets/images/img-2.png'),
-    x2: require('./../../assets/images/img-2@2x.png'),
-    x3: require('./../../assets/images/img-2@3x.png'),
-  },
-  {
-    id: generateId(),
-    x1: require('./../../assets/images/img-3.png'),
-    x2: require('./../../assets/images/img-3@2x.png'),
-    x3: require('./../../assets/images/img-3@3x.png'),
-  },
-];
-
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
@@ -51,14 +29,17 @@ export default class Carousel extends React.Component {
   }
 
   render() {
+    if (!this.props.images) return <div>Loading images</div>;
+    const { id, fileName } = this.props.images[this.state.selectedIndex];
+    const bigImage = makeImageLink(id, fileName, 800);
     return (
       <div>
-        <BigImage src={images[this.state.selectedIndex].x3} />
+        <BigImage src={bigImage} />
         <Wrapper>
           {
-            images.map((image, index) =>
+            this.props.images.map((image, index) =>
               (<Item
-                img={image.x1}
+                img={makeImageLink(image.id, image.fileName, 240)}
                 key={image.id}
                 index={index}
                 isSelected={this.state.selectedIndex === index}
