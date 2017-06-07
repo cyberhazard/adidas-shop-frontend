@@ -1,22 +1,38 @@
 import React from 'react';
-import { Wrapper, Image, Button, Label } from './styled';
+import { Wrapper, Button, Label } from './styled';
 
-export default () => (
-  <Wrapper>
-    <Image src={require('./filter.png')} />
-    <div>
-      <Button isSelected>Man</Button>
-      <Button>Woman</Button>
-    </div>
-    <div>
-      <Label>Size</Label>
-      <Button mini>36</Button>
-      <Button mini>37</Button>
-      <Button mini>38</Button>
-      <Button mini>39</Button>
-      <Button mini>40</Button>
-      <Button mini isSelected>41</Button>
-      <Button mini>42</Button>
-    </div>
-  </Wrapper>
-);
+export default class Filter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { selectedSize: null };
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (JSON.stringify(this.props.sizes) !== JSON.stringify(nextProps.sizes)) {
+      this.setState({ selectedSize: null });
+    }
+  }
+
+  handleFilterChange(size) {
+    const selectedSize = size === this.state.selectedSize ? null : size;
+    this.props.onClick(selectedSize);
+    this.setState({ selectedSize });
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <Label>Size</Label>
+        {
+          this.props.sizes.map(size =>
+            (<Button
+              mini
+              isSelected={size === this.state.selectedSize}
+              onClick={() => this.handleFilterChange(size)}
+            >{ size }</Button>))
+        }
+      </Wrapper>
+    );
+  }
+}

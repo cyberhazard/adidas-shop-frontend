@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col as OriginalCol } from 'react-flexbox-grid';
 import Filter from './Filter';
 import Card from './Card';
 import media from './../media';
-
-export const CustomCol = styled(Col)`
-  margin: 6px 0;
-`;
+import { makeImageLink } from './../helpers';
+import { get } from './../api';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -16,42 +14,68 @@ const Wrapper = styled.div`
   ${media.tablet`padding-top: 64px;`}
 `;
 
-const CutomGrid = styled(Grid)`
-  padding: 0 1.4rem !important;
-`;
+const Col = ({ children }) => <OriginalCol xs={12} sm={6} md={4} lg={3}>{children}</OriginalCol>;
 
-const generateId = () => `${Date.now()}-${Math.round(Math.random() * 10000000)}`;
-const generateNumber = (min, max) => Math.floor((Math.random() * ((max - min) + 1)) + min);
+export default class List extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { products: [], filter: null };
+    this.load = this.load.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+  }
 
-const products = new Array(300).fill(0).map(() => ({
-  id: generateId(),
-  price: `$ ${generateNumber(100, 300)}`,
-  sale: !Math.round(Math.random()),
-  img: [
-    require('./../assets/images/prod-1.png'),
-    require('./../assets/images/prod-2.png'),
-    require('./../assets/images/prod-3.png'),
-  ][generateNumber(0, 2)],
-}));
+  componentDidMount() {
+    this.load(this.props);
+  }
 
-export default ({ match }) => (
-  <Wrapper>
-    <Filter />
-    <CutomGrid fluid>
-      <Row>
-        {
-          products.map(product => (
-            <CustomCol xs={12} sm={6} md={4} lg={3} key={product.id}>
-              <Card
-                to={`${match.url}/${product.id}`}
-                img={product.img}
-                price={product.price}
-                sale={product.sale}
-              />
-            </CustomCol>
-          ))
-        }
-      </Row>
-    </CutomGrid>
-  </Wrapper>
-);
+  componentWillReceiveProps(nextProps) {
+    this.load(nextProps);
+    this.wrapper.scrollTop = 0;
+  }
+
+  handleFilterChange(filter) {
+    this.setState({ filter });
+  }
+
+  load(props) {
+    const { group, type } = props.match.params;
+    get(`v1/products/${group}/${type}`)
+      .then(({ items }) => this.setState({ products: items, filter: null }));
+  }
+
+  render() {
+    const sizes = Array.from(new Set(this.state.products
+      .reduce((allSizes, obj) => [...allSizes, ...obj.sizes], []),
+    ));
+    const filtered = this.state.filter
+      ? this.state.products.filter(obj => obj.sizes.includes(this.state.filter))
+      : this.state.products;
+    return (
+      <Wrapper innerRef={(wrapper) => { this.wrapper = wrapper; }}>
+        <Filter
+          sizes={sizes}
+          onClick={this.handleFilterChange}
+        />
+        <Grid fluid>
+          <Row>
+            {
+              filtered.map((product) => {
+                const { id, fileName } = product.images[0];
+                return (
+                  <Col key={product.id}>
+                    <Card
+                      to={`${this.props.match.url}/${product.id}`}
+                      img={makeImageLink(id, fileName, 256)}
+                      price={product.price}
+                      currency={product.currency}
+                    />
+                  </Col>
+                );
+              })
+            }
+          </Row>
+        </Grid>
+      </Wrapper>
+    );
+  }
+}

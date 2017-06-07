@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   position: relative;
-  height: 100%;
   border: 8px solid #f3f3f3;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 `;
 
 export const Cover = styled.div`
