@@ -65,7 +65,7 @@ export default class List extends React.Component {
                   <Col key={product.id}>
                     <Card
                       to={`${this.props.match.url}/${product.id}`}
-                      img={makeImageLink(id, fileName, 256)}
+                      img={makeImageLink(id, fileName, 384)}
                       price={product.price}
                       currency={product.currency}
                     />
